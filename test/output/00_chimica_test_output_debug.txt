@@ -1,0 +1,8 @@
+AA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 1	- Number of catalyzed cleavage reaction: 0	- Catalyzed condensation reactions:R-A + BA-R	- Catalyzed cleavage reactions:ABB infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 1	- Number of catalyzed cleavage reaction: 0	- Catalyzed condensation reactions:R-A + BA-R	- Catalyzed cleavage reactions:BA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 0	- Number of catalyzed cleavage reaction: 1	- Catalyzed condensation reactions:	- Catalyzed cleavage reactions:R-ABB-RAA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 0	- Number of catalyzed cleavage reaction: 1	- Catalyzed condensation reactions:	- Catalyzed cleavage reactions:R-AA-RAABABA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 0	- Number of catalyzed cleavage reaction: 1	- Catalyzed condensation reactions:	- Catalyzed cleavage reactions:R-ABB-RBABABA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 0	- Number of catalyzed cleavage reaction: 1	- Catalyzed condensation reactions:	- Catalyzed cleavage reactions:R-ABB-RAABABA infos:
+	- Number of total catalyzed reaction: 1	- Number of catalyzed condensation reaction: 0	- Number of catalyzed cleavage reaction: 1	- Catalyzed condensation reactions:	- Catalyzed cleavage reactions:R-ABB-R

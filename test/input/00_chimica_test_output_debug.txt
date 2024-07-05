@@ -1,0 +1,97 @@
+BA infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 1
+	- Number of catalyzed cleavage reaction classes: 0
+	- Catalyzed condensation reaction classes:
+		1. R-A + BA-R
+	- Catalyzed cleavage reactions classes
+		None
+	- Number of total catalyzed generated reactions: 24
+	- Number of total catalyzed generated condensation reactions: 24
+	- Number of total catalyzed generated cleavage reactions: 0
+
+AA infos:
+	- Number of total catalyzed reaction: 2
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 2
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+		2. R-AB-R
+	- Number of total catalyzed generated reactions: 51
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 51
+
+BB infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-BB-R
+	- Number of total catalyzed generated reactions: 3
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 3
+
+ABB infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 1
+	- Number of catalyzed cleavage reaction classes: 0
+	- Catalyzed condensation reaction classes:
+		1. R-A + BA-R
+	- Catalyzed cleavage reactions classes
+		None
+	- Number of total catalyzed generated reactions: 24
+	- Number of total catalyzed generated condensation reactions: 24
+	- Number of total catalyzed generated cleavage reactions: 0
+
+ABA infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+	- Number of total catalyzed generated reactions: 8
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 8
+
+AAB infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 1
+	- Number of catalyzed cleavage reaction classes: 0
+	- Catalyzed condensation reaction classes:
+		1. R-A + BA-R
+	- Catalyzed cleavage reactions classes
+		None
+	- Number of total catalyzed generated reactions: 24
+	- Number of total catalyzed generated condensation reactions: 24
+	- Number of total catalyzed generated cleavage reactions: 0
+
+AABABA infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 1
+	- Number of catalyzed cleavage reaction classes: 0
+	- Catalyzed condensation reaction classes:
+		1. R-A + BA-R
+	- Catalyzed cleavage reactions classes
+		None
+	- Number of total catalyzed generated reactions: 24
+	- Number of total catalyzed generated condensation reactions: 24
+	- Number of total catalyzed generated cleavage reactions: 0
+
+ABABA infos:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+	- Number of total catalyzed generated reactions: 8
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 8
+
