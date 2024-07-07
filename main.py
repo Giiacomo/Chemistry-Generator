@@ -39,7 +39,7 @@ def main():
         subprocess.run(command, check=True)
         end_time = time.time()
         elapsed_time = round(end_time - start_time, 2)
-        print(f"\nThe process took {elapsed_time} seconds!")
+        print(f"The process took {elapsed_time} seconds!\n")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while running the script: {e}")
         sys.exit(1)

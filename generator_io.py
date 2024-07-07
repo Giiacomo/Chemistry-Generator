@@ -140,6 +140,9 @@ class GeneratorIO(BaseIO):
         self.debug = debug
         if output_file:
             self.output_file = output_file
+        
+        self.debug_file = self.output_file.replace(".txt", "") + "_debug.txt"
+
 
 
     def write_data(self, data):
@@ -159,7 +162,7 @@ class GeneratorIO(BaseIO):
             self.counter_cond = 0
             for r in data["cond_reactions"]:  
                 for catalyzer in r.reaction_class.catalyzers:
-                    file.write(r.reactants[0] + " + " + r.reactants[1] + " + " + catalyzer.species + " > " + str(r.product) + " + " + catalyzer.species + " ; " + str(r.reaction_class.reaction_speed) + "\n")
+                    file.write(r.reactants[0] + " + " + r.reactants[1] + " + " + catalyzer.species + " > " + str(r.product[0].name) + " + " + catalyzer.species + " ; " + str(r.reaction_class.reaction_speed) + "\n")
                     self.counter_cond += 1
 
             file.write("\n")
@@ -167,7 +170,7 @@ class GeneratorIO(BaseIO):
             self.counter_cll = 0
             for r in data["cll_reactions"]:
                 for catalyzer in r.reaction_class.catalyzers:
-                    file.write(r.reactants + " + " + catalyzer.species + " > " + r.product[0] + " + " + r.product[1] + " + " + catalyzer.species + " ; " + str(r.reaction_class.reaction_speed) + "\n")
+                    file.write(r.reactants[0] + " + " + catalyzer.species + " > " + r.product[0].name + " + " + r.product[1].name + " + " + catalyzer.species + " ; " + str(r.reaction_class.reaction_speed) + "\n")
                     self.counter_cll += 1
 
             if self.debug:
@@ -175,9 +178,10 @@ class GeneratorIO(BaseIO):
 
     def write_debug_info(self, data):
         with open(self.debug_file, 'w') as file:
+            file.write("CATALYZERS INFO\n\n")
             for catalyzer in data["catalyzers"]:
                 name = catalyzer.species
-                file.write(f"{name} infos:\n")
+                file.write(f"{name}:\n")
                 n_catalyzed_reactions = len(catalyzer.reactions)
                 file.write(f"\t- Number of total catalyzed reaction: {n_catalyzed_reactions}\n")
                 catalyzed_cond_reactions = [r for r in catalyzer.reactions if isinstance(r, CondReactionClass)]
@@ -201,44 +205,35 @@ class GeneratorIO(BaseIO):
                 file.write(f"\t- Number of total catalyzed generated reactions: {n_catalyzed_reactions['n_cata_gen_reactions']}\n")
                 file.write(f"\t- Number of total catalyzed generated condensation reactions: {n_catalyzed_reactions['n_cata_gen_cond']}\n")
                 file.write(f"\t- Number of total catalyzed generated cleavage reactions: {n_catalyzed_reactions['n_cata_gen_cll']}\n")
+                
+                counter_cata_reactant = 0
+                counter_r = 0
+                for r in data["reaction_classes"]:
+                    for gen_r in r.generated_reactions:
+                        for cata in r.catalyzers:
+                            counter_r += 1
+                            if gen_r.is_species_in_reaction(name):
+                                counter_cata_reactant += 1
 
+                file.write(f"\t- The catalyzers species appears in {counter_cata_reactant} reactions.\n")
                 file.write("\n")
 
-
-
-    def print_info(self, data):
-        print("The chemical file has been generated. Here's some info!")
-
-        self.new_species_count = len(data["species"]) - self.initial_species_count
-        print(f"{self.new_species_count} new species have been generated:")
-        #print(", ".join([species[0] for species in data["species"][self.initial_species_count:]]))
-        print()
-        print(f"{self.counter_cond} condensation reactions have been generated")
-        print(f"{self.counter_cll} cleavage reactions have been generated")
-        print()
-        print("Condensation catalyzers for this chemical are: " )
-        out = ""
-        for catalyzer in data["catalyzers"]:
-            out += f"{catalyzer['catalyzer_specie']}\t"
-        print(f'{out}\n')
-
-        print("Cleavage catalyzers for this chemical are: " )
-        out = ""
-        for catalyzer in data["catalyzers"]:
-            out += f"{catalyzer['catalyzer_specie']}\t"
-        print(f'{out}\n')
-
-        print("Assigned reactions for each catalyzer:")
-        print("Condensation reactions:")
-        for catalyzer in data["catalyzers"]:
-            reaction = catalyzer['reaction']
-            print(f"\t- {catalyzer['catalyzer_specie']} is assigned to reaction\t⟶\tR-{reaction[0]} + {reaction[1]}-R")
-
-        print("\nCleavage reactions:")
-        for catalyzer in data["catalyzers"]:
-            reaction = catalyzer['reaction']
-            print(f"\t- {catalyzer['catalyzer_specie']} is assigned to reaction\t⟶\tR-{reaction[0]}-R")
-
+            file.write("\n\n\nSPECIES INFO:\n\n")
+            
+            for species in data["species"]:
+                name = species.name
+                file.write(f"{name}:\n")
+                species_generator_info = species.get_generator_reaction_info() 
+                file.write(f"\t- Number of reactions that generate the species: {species_generator_info['n_generator_reaction']}\n")
+                file.write(f"\t- Number of cond reactions that generate the species: {species_generator_info['n_generator_cond_reaction']}\n")
+                file.write(f"\t- Number of cll reactions that generate the species: {species_generator_info['n_generator_cll_reaction']}\n")
+                file.write(f"\t- Number of catalyzers that generate the species: {species_generator_info['n_catalyzers']}\n")
+                file.write(f"\t- Number of condensation catalyzers that generate the species: {species_generator_info['n_cond_catalyzers']}\n")
+                file.write(f"\t- Number of cleavage catalyzers that generate the species: {species_generator_info['n_cll_catalyzers']}\n")
+                file.write(f"\t- List of catalyzers that generate the species:\n")
+                for i, catalyzer in enumerate(species_generator_info['list_unique_catalyzers']):
+                    file.write(f"\t\t{i+1}. {catalyzer.species}\n")
+                file.write("\n")
 
 class GenToolIO(BaseIO):
 

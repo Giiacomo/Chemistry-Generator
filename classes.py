@@ -23,6 +23,41 @@ class Species:
         self.name = name
         self.concentration = concentration
         self.contrib = contrib
+        self.generator_reactions = []
+
+    def add_generator_reaction(self, reaction):
+        if reaction not in self.generator_reactions:
+            self.generator_reactions.append(reaction)
+
+    def get_generator_reaction_info(self):
+        info = {
+            'n_generator_reaction': 0,
+            'n_generator_cond_reaction': 0,
+            'n_generator_cll_reaction': 0,
+            'n_catalyzers': 0,
+            'n_cond_catalyzers': 0,
+            'n_cll_catalyzers': 0,
+            'list_unique_catalyzers': []
+        }
+        info["n_generator_reaction"] = len(self.generator_reactions)
+        info["n_generator_cond_reaction"] = len([r for r in self.generator_reactions if isinstance(r.reaction_class, CondReactionClass)])
+        info["n_generator_cll_reaction"] = len([r for r in self.generator_reactions if isinstance(r.reaction_class, CllReactionClass)])
+        
+        unique_catalyzers = set()
+
+        for r in self.generator_reactions:
+            for cata in r.reaction_class.catalyzers:
+                if cata not in unique_catalyzers:
+                    unique_catalyzers.add(cata)
+                    info['n_catalyzers'] += 1
+                    if isinstance(r.reaction_class, CondReactionClass):
+                        info['n_cond_catalyzers'] += 1
+                    if isinstance(r.reaction_class, CllReactionClass):
+                        info['n_cll_catalyzers'] += 1
+                        
+        info['list_unique_catalyzers'] = list(unique_catalyzers)
+
+        return info
 
 class ReactionClass:
     def __init__(self, reaction_speed):
@@ -54,8 +89,13 @@ class CllReactionClass (ReactionClass):
 class GeneratedReaction:
     def __init__(self, reactants, reaction_class, product):
         self.reactants = reactants
-        self.reaction_class = reaction_class #ReactionClass, to access speed and everything
+        self.reaction_class = reaction_class #ReactionClass
         self.product = product
+            
+
+    def is_species_in_reaction(self, species):
+        return (species in self.reactants)
+        
 
 
 
@@ -70,7 +110,7 @@ class Catalyzer:
     def get_n_catalyzed_reactions (self):
         n_catalyzed_reactions = {   'n_cata_gen_reactions': 0,
                                     'n_cata_gen_cond': 0,
-                                    'n_cata_gen_cll': 0    
+                                    'n_cata_gen_cll': 0,
                                 }
         for reaction in self.reactions:
             if isinstance(reaction, CondReactionClass):
@@ -79,7 +119,8 @@ class Catalyzer:
             if isinstance(reaction, CllReactionClass):
                 for gen_r in reaction.generated_reactions:
                     n_catalyzed_reactions['n_cata_gen_cll'] += 1
-        
+
+
         n_catalyzed_reactions['n_cata_gen_reactions'] = n_catalyzed_reactions['n_cata_gen_cll'] + n_catalyzed_reactions['n_cata_gen_cond']
 
         return n_catalyzed_reactions
