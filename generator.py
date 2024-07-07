@@ -3,7 +3,7 @@ import random
 import argparse
 from generator_io import GeneratorIO
 from classes import *
-from utils import are_reactions_same_no_cata, flatten_list, are_reactions_same
+from utils import are_reactions_same_no_cata, flatten_species_list, are_reactions_same
 import traceback
 
 
@@ -233,10 +233,10 @@ class ReactionGenerator:
         new_species = list(new_cond_species | new_cll_species)
         self.generate_new_catalyzers(new_species)
         self.species.extend(new_species)
-        self.species = flatten_list(self.species)
+        self.species = flatten_species_list(self.species)
         while True:
 
-            current_species = flatten_list([species for species in self.species if species.name != self.container.name])
+            current_species = flatten_species_list([species for species in self.species if species.name != self.container.name])
             new_species_short = [species for species in current_species if len(species.name) <= int(self.system.ML)]
             
             new_condensation_products = self.generate_condensation_reactions(new_species_short)
@@ -262,7 +262,7 @@ class ReactionGenerator:
                 break
             self.species.extend(new_species_list)
 
-            self.species = flatten_list(self.species)
+            self.species = flatten_species_list(self.species)
 
         self.cond_reactions = self.eliminate_duplicate_reactions(self.cond_reactions)
         self.cll_reactions = self.eliminate_duplicate_reactions(self.cll_reactions)

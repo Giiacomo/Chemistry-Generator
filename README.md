@@ -9,7 +9,7 @@ This tool allows for the generation of chemical species and reactions based on u
 
 - `file_path`: The path to the input file containing the chemical data (how the file is supposed to look in order to work is shown in test folder, or in documentation relative to the mode you're using in docs folder).
 - `-o`, `--output`: The name of the output file where the generated data will be saved.
-- `-debug`: Enable debug mode to print additional information (only for **generator mode**).
+- `-debug`: Enable debug mode to write additional information on debug file (only for **generator mode**).
 
 ### Flags 🚩
 

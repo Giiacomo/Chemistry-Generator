@@ -1,16 +1,6 @@
 from classes import CondReactionClass, CllReactionClass 
 
-def flatten_list(lst):
-    """
-    This function takes a list and returns a new list with all unique elements,
-    preserving the order of their first occurrence.
-    
-    Parameters:
-    lst (list): A list to be flattened
-    
-    Returns:
-    list: A flat list containing all unique elements of the input list
-    """
+def flatten_species_list(lst):
     seen = set()
     unique_list = []
     for item in lst:
@@ -20,7 +10,6 @@ def flatten_list(lst):
     return unique_list
 
 def are_reactions_same_no_cata(reaction1, reaction2):
-    """Utility function to check if two reactions are the same."""
     if type(reaction1.reaction_class) != type(reaction2.reaction_class):
         return False
 

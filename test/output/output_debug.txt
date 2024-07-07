@@ -12,37 +12,91 @@ AA:
 	- Number of total catalyzed generated reactions: 85
 	- Number of total catalyzed generated condensation reactions: 85
 	- Number of total catalyzed generated cleavage reactions: 0
-	- The catalyzers species appears in 20 reactions.
+	- The catalyzers species appears in 21 reactions.
 
 AABB:
-	- Number of total catalyzed reaction: 3
+	- Number of total catalyzed reaction: 2
 	- Number of catalyzed condensation reaction classes: 0
-	- Number of catalyzed cleavage reaction classes: 3
+	- Number of catalyzed cleavage reaction classes: 2
 	- Catalyzed condensation reaction classes:
 		None
 	- Catalyzed cleavage reactions classes
 		1. R-AA-R
+		2. R-BB-R
+	- Number of total catalyzed generated reactions: 59
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 59
+	- The catalyzers species appears in 27 reactions.
+
+BA:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AB-R
+	- Number of total catalyzed generated reactions: 108
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 108
+	- The catalyzers species appears in 78 reactions.
+
+BBBA:
+	- Number of total catalyzed reaction: 5
+	- Number of catalyzed condensation reaction classes: 2
+	- Number of catalyzed cleavage reaction classes: 3
+	- Catalyzed condensation reaction classes:
+		1. R-A + BA-R
+		2. R-B + BA-R
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
 		2. R-AB-R
 		3. R-BB-R
-	- Number of total catalyzed generated reactions: 167
-	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated reactions: 252
+	- Number of total catalyzed generated condensation reactions: 85
 	- Number of total catalyzed generated cleavage reactions: 167
-	- The catalyzers species appears in 16 reactions.
+	- The catalyzers species appears in 24 reactions.
 
 AAB:
 	- Number of total catalyzed reaction: 1
-	- Number of catalyzed condensation reaction classes: 1
-	- Number of catalyzed cleavage reaction classes: 0
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
 	- Catalyzed condensation reaction classes:
-		1. R-A + BA-R
-	- Catalyzed cleavage reactions classes
 		None
-	- Number of total catalyzed generated reactions: 64
-	- Number of total catalyzed generated condensation reactions: 64
-	- Number of total catalyzed generated cleavage reactions: 0
-	- The catalyzers species appears in 12 reactions.
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+	- Number of total catalyzed generated reactions: 16
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 16
+	- The catalyzers species appears in 23 reactions.
 
-ABB:
+BABA:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+	- Number of total catalyzed generated reactions: 16
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 16
+	- The catalyzers species appears in 95 reactions.
+
+ABBA:
+	- Number of total catalyzed reaction: 1
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 1
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+	- Number of total catalyzed generated reactions: 16
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 16
+	- The catalyzers species appears in 24 reactions.
+
+AABABA:
 	- Number of total catalyzed reaction: 1
 	- Number of catalyzed condensation reaction classes: 1
 	- Number of catalyzed cleavage reaction classes: 0
@@ -53,22 +107,7 @@ ABB:
 	- Number of total catalyzed generated reactions: 64
 	- Number of total catalyzed generated condensation reactions: 64
 	- Number of total catalyzed generated cleavage reactions: 0
-	- The catalyzers species appears in 12 reactions.
-
-ABBBA:
-	- Number of total catalyzed reaction: 3
-	- Number of catalyzed condensation reaction classes: 0
-	- Number of catalyzed cleavage reaction classes: 3
-	- Catalyzed condensation reaction classes:
-		None
-	- Catalyzed cleavage reactions classes
-		1. R-AA-R
-		2. R-AB-R
-		3. R-BB-R
-	- Number of total catalyzed generated reactions: 167
-	- Number of total catalyzed generated condensation reactions: 0
-	- Number of total catalyzed generated cleavage reactions: 167
-	- The catalyzers species appears in 28 reactions.
+	- The catalyzers species appears in 33 reactions.
 
 ABABA:
 	- Number of total catalyzed reaction: 3
@@ -83,7 +122,22 @@ ABABA:
 	- Number of total catalyzed generated reactions: 167
 	- Number of total catalyzed generated condensation reactions: 0
 	- Number of total catalyzed generated cleavage reactions: 167
-	- The catalyzers species appears in 24 reactions.
+	- The catalyzers species appears in 21 reactions.
+
+AABBA:
+	- Number of total catalyzed reaction: 3
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 3
+	- Catalyzed condensation reaction classes:
+		None
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+		2. R-AB-R
+		3. R-BB-R
+	- Number of total catalyzed generated reactions: 167
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 167
+	- The catalyzers species appears in 30 reactions.
 
 BBABA:
 	- Number of total catalyzed reaction: 3
@@ -98,20 +152,22 @@ BBABA:
 	- Number of total catalyzed generated reactions: 167
 	- Number of total catalyzed generated condensation reactions: 0
 	- Number of total catalyzed generated cleavage reactions: 167
-	- The catalyzers species appears in 24 reactions.
+	- The catalyzers species appears in 21 reactions.
 
-ABBBABA:
-	- Number of total catalyzed reaction: 1
-	- Number of catalyzed condensation reaction classes: 1
-	- Number of catalyzed cleavage reaction classes: 0
+ABBBA:
+	- Number of total catalyzed reaction: 3
+	- Number of catalyzed condensation reaction classes: 0
+	- Number of catalyzed cleavage reaction classes: 3
 	- Catalyzed condensation reaction classes:
-		1. R-A + BA-R
-	- Catalyzed cleavage reactions classes
 		None
-	- Number of total catalyzed generated reactions: 64
-	- Number of total catalyzed generated condensation reactions: 64
-	- Number of total catalyzed generated cleavage reactions: 0
-	- The catalyzers species appears in 16 reactions.
+	- Catalyzed cleavage reactions classes
+		1. R-AA-R
+		2. R-AB-R
+		3. R-BB-R
+	- Number of total catalyzed generated reactions: 167
+	- Number of total catalyzed generated condensation reactions: 0
+	- Number of total catalyzed generated cleavage reactions: 167
+	- The catalyzers species appears in 30 reactions.
 
 
 
@@ -131,788 +187,884 @@ A:
 	- Number of reactions that generate the species: 32
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 32
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 10
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 10
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
+		1. BBBA
+		2. AAB
 		3. ABABA
-		4. BBABA
+		4. BABA
+		5. AABBA
+		6. ABBA
+		7. BBABA
+		8. AABB
+		9. ABBBA
+		10. BA
 
 B:
 	- Number of reactions that generate the species: 15
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 15
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 7
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. ABBBA
+		6. AABB
+		7. BA
 
 AA:
 	- Number of reactions that generate the species: 15
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 15
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 6
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. ABBBA
+		6. BA
 
 AB:
 	- Number of reactions that generate the species: 11
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 11
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
+		1. BBBA
+		2. AAB
 		3. ABABA
-		4. BBABA
+		4. BABA
+		5. AABBA
+		6. ABBA
+		7. BBABA
+		8. AABB
+		9. ABBBA
 
 BA:
 	- Number of reactions that generate the species: 46
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 46
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 7
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. AABB
+		6. ABBBA
+		7. BA
 
 BB:
 	- Number of reactions that generate the species: 7
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 7
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 7
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. ABBBA
+		6. AABB
+		7. BA
 
 AAB:
 	- Number of reactions that generate the species: 9
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 9
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 6
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. AABB
+		6. ABBBA
 
 ABA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 5
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 ABB:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 5
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
+		1. BBBA
+		2. AAB
 		3. ABABA
-		4. BBABA
+		4. BABA
+		5. AABBA
+		6. ABBA
+		7. BBABA
+		8. AABB
+		9. ABBBA
 
 BBA:
 	- Number of reactions that generate the species: 10
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 9
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 8
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
+		2. BBBA
 		3. ABABA
-		4. BBABA
-		5. AABB
+		4. AABBA
+		5. BBABA
+		6. AABB
+		7. ABBBA
+		8. BA
 
 AABA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 4
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABB:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 0
 	- Number of cll reactions that generate the species: 4
-	- Number of catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 6
 	- Number of condensation catalyzers that generate the species: 0
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
-		1. ABBBA
-		2. AABB
-		3. ABABA
+		1. BBBA
+		2. ABABA
+		3. AABBA
 		4. BBABA
+		5. AABB
+		6. ABBBA
 
 ABBA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 5
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 11
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. AABB
+		2. BBBA
+		3. AAB
+		4. ABABA
+		5. BABA
+		6. AABBA
+		7. ABBA
+		8. BBABA
+		9. ABBBA
+		10. AABB
+		11. BA
 
 BABA:
 	- Number of reactions that generate the species: 37
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 36
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. AABB
+		9. BA
 
 BBBA:
 	- Number of reactions that generate the species: 7
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 6
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
+		2. BBBA
 		3. ABABA
-		4. BBABA
-		5. AABB
+		4. AABBA
+		5. BBABA
+		6. ABBBA
+		7. BA
 
 AABBA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 3
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
+		2. BBBA
 		3. ABABA
-		4. BBABA
-		5. AABB
+		4. AABBA
+		5. BBABA
+		6. ABBBA
+		7. BA
 
 ABABA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 4
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. ABBBA
+		11. AABB
+		12. BA
 
 ABBBA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 4
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 11
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. AABB
+		2. BBBA
+		3. AAB
+		4. ABABA
+		5. BABA
+		6. AABBA
+		7. ABBA
+		8. BBABA
+		9. AABB
+		10. ABBBA
+		11. BA
 
 BBABA:
 	- Number of reactions that generate the species: 10
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 8
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. AABB
+		8. ABBBA
+		9. BA
 
 AABABA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 3
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBBA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 3
-	- Number of catalyzers that generate the species: 5
-	- Number of condensation catalyzers that generate the species: 1
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 7
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
+		2. BBBA
 		3. ABABA
-		4. BBABA
-		5. AABB
+		4. AABBA
+		5. BBABA
+		6. ABBBA
+		7. BA
 
 ABBABA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 4
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. ABBBA
+		11. AABB
+		12. BA
 
 BABABA:
 	- Number of reactions that generate the species: 27
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 26
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. AABB
+		8. ABBBA
+		9. BA
 
 BBBABA:
 	- Number of reactions that generate the species: 7
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 5
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBABA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 2
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 ABABABA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 3
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 ABBBABA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 3
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 BBABABA:
 	- Number of reactions that generate the species: 10
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 7
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. AABB
+		9. BA
 
 AABABABA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 2
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBBABA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 2
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 ABBABABA:
 	- Number of reactions that generate the species: 6
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 3
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. ABBBA
+		11. AABB
+		12. BA
 
 BABABABA:
 	- Number of reactions that generate the species: 20
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 17
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. AABB
+		9. BA
 
 BBBABABA:
 	- Number of reactions that generate the species: 7
 	- Number of cond reactions that generate the species: 3
 	- Number of cll reactions that generate the species: 4
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBABABA:
 	- Number of reactions that generate the species: 3
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 1
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 ABABABABA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 2
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 ABBBABABA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 2
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 2
+	- Number of cleavage catalyzers that generate the species: 10
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 BBABABABA:
 	- Number of reactions that generate the species: 8
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 6
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. AABB
+		8. ABBBA
+		9. BA
 
 AABABABABA:
 	- Number of reactions that generate the species: 3
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 1
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBBABABA:
 	- Number of reactions that generate the species: 3
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 1
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 ABBABABABA:
 	- Number of reactions that generate the species: 4
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 2
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 12
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 9
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
+		12. BA
 
 BABABABABA:
 	- Number of reactions that generate the species: 8
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 7
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. AABB
+		8. ABBBA
+		9. BA
 
 BBBABABABA:
 	- Number of reactions that generate the species: 5
 	- Number of cond reactions that generate the species: 2
 	- Number of cll reactions that generate the species: 3
 	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 5
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. ABBBA
+		8. BA
 
 AABBABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
 ABABABABABA:
 	- Number of reactions that generate the species: 2
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 1
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 11
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 8
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
 
 ABBBABABABA:
 	- Number of reactions that generate the species: 2
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 1
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 11
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 8
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. AAB
+		5. ABABA
+		6. BABA
+		7. AABBA
+		8. ABBA
+		9. BBABA
+		10. AABB
+		11. ABBBA
 
 BBABABABABA:
 	- Number of reactions that generate the species: 3
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 2
-	- Number of catalyzers that generate the species: 8
-	- Number of condensation catalyzers that generate the species: 4
-	- Number of cleavage catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 9
+	- Number of condensation catalyzers that generate the species: 3
+	- Number of cleavage catalyzers that generate the species: 6
 	- List of catalyzers that generate the species:
 		1. AA
-		2. ABBBA
-		3. ABABA
-		4. BBABA
-		5. ABBBABA
-		6. AABB
-		7. AAB
-		8. ABB
+		2. BBBA
+		3. AABABA
+		4. ABABA
+		5. AABBA
+		6. BBABA
+		7. AABB
+		8. ABBBA
+		9. BA
 
 AABABABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
 AABBBABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
 ABBABABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
 BABABABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
 BBBABABABABA:
 	- Number of reactions that generate the species: 1
 	- Number of cond reactions that generate the species: 1
 	- Number of cll reactions that generate the species: 0
-	- Number of catalyzers that generate the species: 4
-	- Number of condensation catalyzers that generate the species: 4
+	- Number of catalyzers that generate the species: 3
+	- Number of condensation catalyzers that generate the species: 3
 	- Number of cleavage catalyzers that generate the species: 0
 	- List of catalyzers that generate the species:
-		1. ABB
-		2. ABBBABA
-		3. AAB
-		4. AA
+		1. AABABA
+		2. AA
+		3. BBBA
 
