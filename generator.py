@@ -321,13 +321,15 @@ if __name__ == "__main__":
     parser.add_argument("file_path", help="The path to the input file.")
     parser.add_argument("-o", "--output", help="The name of the output file.")
     parser.add_argument("-debug", action="store_true", help="Enable debug mode.", default=False)
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose debug mode.", default=False)
     args = parser.parse_args()
 
     debug = args.debug
+    verbose = args.verbose
     file_path = args.file_path
     output_file = args.output
 
-    generatorIO = GeneratorIO(file_path, debug, output_file)
+    generatorIO = GeneratorIO(file_path, debug, verbose, output_file)
     try:
         parsed_data = generatorIO.parse_data()
         system = parsed_data.get("system", SystemParameters())

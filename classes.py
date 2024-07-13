@@ -19,11 +19,12 @@ class LengthClass:
         self.specificity = specificity
 
 class Species:
-    def __init__(self, name, concentration, contrib):
+    def __init__(self, name, concentration, contrib, is_in_initial_set=False):
         self.name = name
         self.concentration = concentration
         self.contrib = contrib
         self.generator_reactions = []
+        self.is_in_initial_set = is_in_initial_set
 
     def add_generator_reaction(self, reaction):
         if reaction not in self.generator_reactions:
@@ -91,7 +92,9 @@ class GeneratedReaction:
         self.reactants = reactants
         self.reaction_class = reaction_class #ReactionClass
         self.product = product
-            
+    
+    def get_catalyzers(self):
+        return self.reaction_class.catalyzers
 
     def is_species_in_reaction(self, species):
         return (species in self.reactants)
@@ -103,6 +106,32 @@ class Catalyzer:
     def __init__(self, catalyzer_species):
         self.species = catalyzer_species
         self.reactions = []
+
+    def is_cond_catalyzer(self):
+        for reaction in self.reactions:
+            if isinstance(reaction, CondReactionClass):
+                return True
+        return False
+
+    def get_cond_reaction_classes (self):
+        cond_reaction_classes = []
+        for r in self.reactions:
+            if isinstance(r, CondReactionClass):
+                cond_reaction_classes.append(r)
+        return cond_reaction_classes
+
+    def get_cll_reaction_classes (self):
+        cll_reaction_classes = []
+        for r in self.reactions:
+            if isinstance(r, CllReactionClass):
+                cll_reaction_classes.append(r)
+        return cll_reaction_classes
+
+    def is_cll_catalyzer(self):
+        for reaction in self.reactions:
+            if isinstance(reaction, CllReactionClass):
+                return True
+        return False
 
     def add_reaction_class(self, reaction):
         self.reactions.append(reaction)

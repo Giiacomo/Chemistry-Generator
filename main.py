@@ -11,12 +11,14 @@ def main():
     group.add_argument("-gentool", action="store_true", help="Run the gentool script.")
     parser.add_argument("-o", "--output", help="The name of the output file.")
     parser.add_argument("-debug", action="store_true", help="Enable debug mode.", default=False)
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose debug mode.", default=False)
 
     args = parser.parse_args()
 
     file_path = args.file_path
     output_file = args.output
     debug = args.debug
+    verbose = args.verbose
 
     if args.generator:
         print("\nRunning generation process!")
@@ -25,6 +27,8 @@ def main():
             command += ["-o", output_file]
         if debug:
             command.append("-debug")
+        if verbose:
+            command.append("-v")
 
     elif args.gentool:
         print("\nRunning tool process!")
