@@ -1,5 +1,6 @@
 import sys
 from classes import SystemParameters, Species, CondReactionClass, CllReactionClass, LengthClass
+from openpyxl import Workbook
 
 class BaseIO:
     def __init__(self, file_path):
@@ -100,7 +101,6 @@ class BaseIO:
         if len(parts) != 2 or parts[0] not in possible_params:
             raise ValueError("Error!\nInvalid parameter. Check the documentation to understand more about system parameters!")
         
-        # Use setattr to dynamically set attributes of system_data
         setattr(system_data, parts[0], parts[1])
 
     def _parse_reactions(self, line, data):
@@ -135,15 +135,19 @@ class BaseIO:
 
 class GeneratorIO(BaseIO):
 
-    def __init__(self, file_path, debug=False, verbose=False, output_file=None):
+    def __init__(self, file_path, debug=False, output_type=None, output_file=None):
         super().__init__(file_path)
         self.debug = debug
-        self.verbose = verbose
+        self.output_type = output_type
         if output_file:
             self.output_file = output_file
-        
-        
-        self.debug_file = self.output_file.replace(".txt", "") + "_debug.txt"
+        self.debug_file = self.output_file.replace(".txt", "") + ".debug."
+        if output_type == 'txt-verbose':
+            self.debug_file += "verbose.txt"
+        elif output_type == 'excel':
+            self.debug_file += "xls"
+        else:
+            self.debug_file += "txt"
 
 
 
@@ -153,9 +157,9 @@ class GeneratorIO(BaseIO):
             max_concentration_length = max(len(str(species.concentration)) for species in data["species"])
 
             for species in data["species"]:
-                name_str = str(species.name).ljust(max_name_length + 2)  # +2 for padding
-                concentration_str = str(species.concentration).ljust(max_concentration_length + 2)  # +2 for padding
-                contrib_str = str(species.contrib)  # Convert float to string
+                name_str = str(species.name).ljust(max_name_length + 2) 
+                concentration_str = str(species.concentration).ljust(max_concentration_length + 2) 
+                contrib_str = str(species.contrib) 
 
                 file.write(f"{name_str} {concentration_str} {contrib_str}\n")
 
@@ -177,10 +181,70 @@ class GeneratorIO(BaseIO):
 
             if self.debug:
                 self.print_info(data)
-                if self.verbose:
+                if self.output_type == 'txt-verbose':
                     self.write_debug_info_verbose(data)
+                elif self.output_type == 'excel':
+                    self.write_debug_info_excel(data)
                 else:
                     self.write_debug_info(data)
+
+    def write_debug_info_excel(self, data):
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Debug Info"
+
+        ws.append(["CATALYZERS INFO"])
+        ws.append(["Name", "Total Reactions", "Cond Reactions", "Cll Reactions",
+                "Total Generated Reactions", "Generated Cond Reactions", "Generated Cll Reactions",
+                "Catalyzers in Reactions"])
+
+        for catalyzer in data["catalyzers"]:
+            name = catalyzer.species
+            n_catalyzed_reactions = len(catalyzer.reactions)
+            catalyzed_cond_reactions = [r for r in catalyzer.reactions if isinstance(r, CondReactionClass)]
+            catalyzed_cll_reactions = [r for r in catalyzer.reactions if isinstance(r, CllReactionClass)]
+            n_catalyzed_reactions_gen = catalyzer.get_n_catalyzed_reactions()
+
+            counter_cata_reactant = 0
+            for r in data["reaction_classes"]:
+                for gen_r in r.generated_reactions:
+                    for cata in r.catalyzers:
+                        if gen_r.is_species_in_reaction(name):
+                            counter_cata_reactant += 1
+
+            ws.append([name,
+                    n_catalyzed_reactions,
+                    len(catalyzed_cond_reactions),
+                    len(catalyzed_cll_reactions),
+                    n_catalyzed_reactions_gen['n_cata_gen_reactions'],
+                    n_catalyzed_reactions_gen['n_cata_gen_cond'],
+                    n_catalyzed_reactions_gen['n_cata_gen_cll'],
+                    counter_cata_reactant])
+
+        ws.append([])  
+
+        ws.append(["SPECIES INFO"])
+        ws.append(["Name", "Total Generated Reactions", "Cond Reactions", "Cll Reactions",
+                "Total Catalyzers", "Cond Catalyzers", "Cll Catalyzers",
+                "Unique Catalyzers"])
+
+        for species in data["species"]:
+            name = species.name
+            species_generator_info = species.get_generator_reaction_info()
+
+            unique_catalyzers = [catalyzer.species for catalyzer in species_generator_info['list_unique_catalyzers']]
+            unique_catalyzers_str = ', '.join(unique_catalyzers) if unique_catalyzers else 'None'
+
+            ws.append([name,
+                    species_generator_info['n_generator_reaction'],
+                    species_generator_info['n_generator_cond_reaction'],
+                    species_generator_info['n_generator_cll_reaction'],
+                    species_generator_info['n_catalyzers'],
+                    species_generator_info['n_cond_catalyzers'],
+                    species_generator_info['n_cll_catalyzers'],
+                    unique_catalyzers_str])
+
+        wb.save(self.debug_file)
 
     def write_debug_info_verbose(self, data):
         with open(self.debug_file, 'w') as file:
@@ -213,11 +277,9 @@ class GeneratorIO(BaseIO):
                 file.write(f"\t- Number of total catalyzed generated cleavage reactions: {n_catalyzed_reactions['n_cata_gen_cll']}\n")
                 
                 counter_cata_reactant = 0
-                counter_r = 0
                 for r in data["reaction_classes"]:
                     for gen_r in r.generated_reactions:
                         for cata in r.catalyzers:
-                            counter_r += 1
                             if gen_r.is_species_in_reaction(name):
                                 counter_cata_reactant += 1
 
@@ -236,56 +298,62 @@ class GeneratorIO(BaseIO):
                 file.write(f"\t- Number of catalyzers that generate the species: {species_generator_info['n_catalyzers']}\n")
                 file.write(f"\t- Number of condensation catalyzers that generate the species: {species_generator_info['n_cond_catalyzers']}\n")
                 file.write(f"\t- Number of cleavage catalyzers that generate the species: {species_generator_info['n_cll_catalyzers']}\n")
+                
                 file.write(f"\t- List of catalyzers that generate the species:\n")
                 for i, catalyzer in enumerate(species_generator_info['list_unique_catalyzers']):
                     file.write(f"\t\t{i+1}. {catalyzer.species}\n")
+                
                 file.write("\n")
 
+
+                    
     def write_debug_info(self, data):
         with open(self.debug_file, 'w') as file:
             file.write("CATALYZERS\n")
+            file.write(f"{'Name':<20} {'Total Reactions':<15} {'Cond Reactions':<15} {'Cll Reactions':<15} "
+                    f"{'Total Gen Reactions':<20} {'Gen Cond Reactions':<20} {'Gen Cll Reactions':<20} "
+                    f"{'Catalyzers in Reactions':<25}\n")
+            
             for catalyzer in data["catalyzers"]:
                 name = catalyzer.species
-                file.write(f"{name} ")
                 n_catalyzed_reactions = len(catalyzer.reactions)
-                file.write(f"{n_catalyzed_reactions} ")
                 catalyzed_cond_reactions = [r for r in catalyzer.reactions if isinstance(r, CondReactionClass)]
                 catalyzed_cll_reactions = [r for r in catalyzer.reactions if isinstance(r, CllReactionClass)]
-                file.write(f"{len(catalyzed_cond_reactions)} ")
-                file.write(f"{len(catalyzed_cll_reactions)} ")
-                n_catalyzed_reactions = catalyzer.get_n_catalyzed_reactions()
-                file.write(f"{n_catalyzed_reactions['n_cata_gen_reactions']} ")
-                file.write(f"{n_catalyzed_reactions['n_cata_gen_cond']} ")
-                file.write(f"{n_catalyzed_reactions['n_cata_gen_cll']} ")
-
+                n_catalyzed_reactions_gen = catalyzer.get_n_catalyzed_reactions()
+                
                 counter_cata_reactant = 0
-                counter_r = 0
                 for r in data["reaction_classes"]:
                     for gen_r in r.generated_reactions:
                         for cata in r.catalyzers:
-                            counter_r += 1
                             if gen_r.is_species_in_reaction(name):
                                 counter_cata_reactant += 1
-
-                file.write(f"{counter_cata_reactant} ")
-                file.write("\n")
-
-            file.write("\nSPECIES\n")
+                
+                file.write(f"{name:<20} {n_catalyzed_reactions:<15} {len(catalyzed_cond_reactions):<15} "
+                        f"{len(catalyzed_cll_reactions):<15} {n_catalyzed_reactions_gen['n_cata_gen_reactions']:<20} "
+                        f"{n_catalyzed_reactions_gen['n_cata_gen_cond']:<20} "
+                        f"{n_catalyzed_reactions_gen['n_cata_gen_cll']:<20} "
+                        f"{counter_cata_reactant:<25}\n")
+            
+            file.write("\n\nSPECIES\n")
+            file.write(f"{'Name':<20} {'Total Gen Reactions':<20} {'Cond Reactions':<15} {'Cll Reactions':<15} "
+                    f"{'Total Catalyzers':<15} {'Cond Catalyzers':<15} {'Cll Catalyzers':<15} "
+                    f"{'Unique Catalyzers':<25}\n")
             
             for species in data["species"]:
                 name = species.name
-                file.write(f"{name} ")
-                species_generator_info = species.get_generator_reaction_info() 
-                file.write(f"{species_generator_info['n_generator_reaction']} ")
-                file.write(f"{species_generator_info['n_generator_cond_reaction']} ")
-                file.write(f"{species_generator_info['n_generator_cll_reaction']} ")
-                file.write(f"{species_generator_info['n_catalyzers']} ")
-                file.write(f"{species_generator_info['n_cond_catalyzers']} ")
-                file.write(f"{species_generator_info['n_cll_catalyzers']} ")
+                species_generator_info = species.get_generator_reaction_info()
+                
                 unique_catalyzers = [catalyzer.species for catalyzer in species_generator_info['list_unique_catalyzers']]
-                file.write(f"{unique_catalyzers if unique_catalyzers else 'None'}")
-                file.write("\n")
-
+                unique_catalyzers_str = ', '.join(unique_catalyzers) if unique_catalyzers else 'None'
+                
+                file.write(f"{name:<20} {species_generator_info['n_generator_reaction']:<20} "
+                        f"{species_generator_info['n_generator_cond_reaction']:<15} "
+                        f"{species_generator_info['n_generator_cll_reaction']:<15} "
+                        f"{species_generator_info['n_catalyzers']:<15} "
+                        f"{species_generator_info['n_cond_catalyzers']:<15} "
+                        f"{species_generator_info['n_cll_catalyzers']:<15} "
+                        f"{unique_catalyzers_str:<25}\n")
+                
     def print_info(self, data):
         print("The chemical file has been generated. Here's some info!")
         new_generated_species = [species for species in data["species"] if species.is_in_initial_set == False] 

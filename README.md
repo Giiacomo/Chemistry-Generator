@@ -22,3 +22,9 @@ To run the tool in generator mode:
 ```bash
 python main.py test/input/input.txt -generator -o test/output/output.txt -debug
 ```
+
+non ho capito sinceramente la correzione che mi ha chiesto riguardante le sostanze consumate durante una reazione, dato che una sostanza è sempre consumata in ogni reazioni in cui prende parte, che sia di cond o di cleavage.
+
+martedi 30 alle 17 incontro tirocinio. 29 -> RAF  mandare email
+
+mandare email per raf 

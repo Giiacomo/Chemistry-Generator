@@ -321,15 +321,16 @@ if __name__ == "__main__":
     parser.add_argument("file_path", help="The path to the input file.")
     parser.add_argument("-o", "--output", help="The name of the output file.")
     parser.add_argument("-debug", action="store_true", help="Enable debug mode.", default=False)
-    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose debug mode.", default=False)
+    parser.add_argument("-ot", "--output-type", required=True, choices=["txt", "txt-verbose", "excel"], default="txt", help="Specify the output type. Choices are 'txt', 'txt-verbose', or 'excel'.")
+
     args = parser.parse_args()
 
     debug = args.debug
-    verbose = args.verbose
+    output_type = args.output_type
     file_path = args.file_path
     output_file = args.output
 
-    generatorIO = GeneratorIO(file_path, debug, verbose, output_file)
+    generatorIO = GeneratorIO(file_path, debug, output_type, output_file)
     try:
         parsed_data = generatorIO.parse_data()
         system = parsed_data.get("system", SystemParameters())
