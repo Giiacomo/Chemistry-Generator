@@ -1,68 +1,84 @@
 CATALYZERS
-Name                 Total Reactions Cond Reactions  Cll Reactions   Total Gen Reactions  Gen Cond Reactions   Gen Cll Reactions    Catalyzers in Reactions  
-AABB                 2               2               0               86                   86                   0                    14                       
-BA                   2               0               2               59                   0                    59                   95                       
-AA                   1               0               1               108                  0                    108                  21                       
-AABA                 1               1               0               64                   64                   0                    24                       
-BBBA                 1               1               0               64                   64                   0                    26                       
-ABBBA                3               0               3               167                  0                    167                  25                       
-BBABA                1               0               1               16                   0                    16                   22                       
-ABBBABA              1               1               0               64                   64                   0                    12                       
-ABABA                3               0               3               167                  0                    167                  22                       
-AABBA                1               0               1               16                   0                    16                   23                       
+Name                 Length (chars)  Reaction Class (total) Cond Reactions  Cll Reactions   Total Gen Reactions  Gen Cond Reactions   Gen Cll Reactions    Catalyzers in Reactions  
+BB                   2               3               2               1               193                  85                   108                  4                        
+AABB                 4               2               0               2               59                   0                    59                   6                        
+AABA                 4               1               0               1               16                   0                    16                   6                        
+ABB                  3               1               1               0               64                   64                   0                    6                        
+BABA                 4               1               0               1               16                   0                    16                   34                       
+ABABA                5               3               0               3               167                  0                    167                  5                        
+ABBABA               6               1               1               0               64                   64                   0                    7                        
+BBABA                5               3               0               3               167                  0                    167                  6                        
+ABBBA                5               3               0               3               167                  0                    167                  7                        
+BBABABA              7               1               1               0               64                   64                   0                    3                        
+AABBBABA             8               1               1               0               64                   64                   0                    5                        
 
 
 SPECIES
-Name                 Total Gen Reactions  Cond Reactions  Cll Reactions   Total Catalyzers Cond Catalyzers Cll Catalyzers  Unique Catalyzers        
-Cont                 0                    0               0               0               0               0               None                     
-A                    32                   0               32              6               0               6               BBABA, AA, ABABA, AABBA, BA, ABBBA
-B                    15                   0               15              4               0               4               BA, ABBBA, AA, ABABA     
-AA                   15                   0               15              3               0               3               ABBBA, AA, ABABA         
-AB                   11                   0               11              5               0               5               BBABA, ABABA, AABBA, BA, ABBBA
-BA                   46                   0               46              4               0               4               BA, ABBBA, AA, ABABA     
-BB                   7                    0               7               4               0               4               BA, ABBBA, AA, ABABA     
-AAB                  9                    0               9               3               0               3               BA, ABBBA, ABABA         
-ABA                  6                    1               5               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-ABB                  5                    0               5               5               0               5               BBABA, ABABA, AABBA, BA, ABBBA
-BBA                  10                   1               9               5               1               4               AABB, AA, ABABA, BA, ABBBA
-AABA                 5                    1               4               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABB                 4                    0               4               3               0               3               BA, ABBBA, ABABA         
-ABBA                 6                    1               5               7               1               6               AABB, BBABA, AA, ABABA, AABBA, BA, ABBBA
-BABA                 37                   1               36              8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-BBBA                 7                    1               6               4               1               3               AABB, ABBBA, AA, ABABA   
-AABBA                4                    1               3               4               1               3               AABB, ABBBA, AA, ABABA   
-ABABA                6                    2               4               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-ABBBA                5                    1               4               7               1               6               BBABA, AABB, AA, ABABA, AABBA, BA, ABBBA
-BBABA                10                   2               8               8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-AABABA               5                    2               3               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBBA               4                    1               3               4               1               3               AABB, ABBBA, AA, ABABA   
-ABBABA               6                    2               4               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BABABA               27                   1               26              8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-BBBABA               7                    2               5               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBABA              4                    2               2               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-ABABABA              6                    3               3               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-ABBBABA              5                    2               3               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BBABABA              10                   3               7               8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-AABABABA             5                    3               2               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBBABA             4                    2               2               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-ABBABABA             6                    3               3               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BABABABA             20                   3               17              8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-BBBABABA             7                    3               4               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBABABA            3                    2               1               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-ABABABABA            4                    2               2               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-ABBBABABA            4                    2               2               10              4               6               BBABA, AABB, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BBABABABA            8                    2               6               8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-AABABABABA           3                    2               1               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBBABABA           3                    2               1               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-ABBABABABA           4                    2               2               10              4               6               AABB, BBABA, AA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BABABABABA           8                    1               7               8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-BBBABABABA           5                    2               3               7               4               3               AABB, AA, ABBBABA, ABABA, AABA, ABBBA, BBBA
-AABBABABABA          1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
-ABABABABABA          2                    1               1               9               4               5               AABB, BBABA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-ABBBABABABA          2                    1               1               9               4               5               AABB, BBABA, ABBBABA, ABABA, AABBA, AABA, BA, ABBBA, BBBA
-BBABABABABA          3                    1               2               8               4               4               AABB, AA, ABBBABA, ABABA, AABA, BA, ABBBA, BBBA
-AABABABABABA         1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
-AABBBABABABA         1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
-ABBABABABABA         1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
-BABABABABABA         1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
-BBBABABABABA         1                    1               0               4               4               0               AABB, ABBBABA, BBBA, AABA
+Name                 Length (chars)  Total Gen Reactions  Cond Reactions  Cll Reactions   Total Catalyzers Cond Catalyzers Cll Catalyzers  Reactions as Reactants    Unique Catalyzers        
+Cont                 4               0                    0               0               0               0               0               0                         None                     
+A                    1               32                   0               32              7               0               7               4                         ABABA, BABA, BB, BBABA, ABBBA, AABA, AABB
+B                    1               15                   0               15              5               0               5               4                         ABABA, BB, BBABA, ABBBA, AABB
+AA                   2               15                   0               15              4               0               4               4                         ABABA, ABBBA, BBABA, BB  
+AB                   2               11                   0               11              6               0               6               4                         ABABA, BABA, BBABA, ABBBA, AABA, AABB
+BA                   2               46                   0               46              5               0               5               30                        ABABA, BB, BBABA, ABBBA, AABB
+BB                   2               7                    0               7               5               0               5               4                         ABABA, BB, BBABA, ABBBA, AABB
+AAB                  3               9                    0               9               4               0               4               6                         ABABA, ABBBA, BBABA, AABB
+ABA                  3               6                    1               5               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABB                  3               5                    0               5               6               0               6               6                         ABABA, BABA, BBABA, ABBBA, AABA, AABB
+BBA                  3               10                   1               9               5               1               4               4                         ABABA, BB, BBABA, ABBBA, AABB
+AABA                 4               5                    1               4               8               5               3               6                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABB                 4               4                    0               4               4               0               4               6                         ABABA, ABBBA, BBABA, AABB
+ABBA                 4               6                    1               5               7               1               6               6                         ABABA, BABA, BB, BBABA, ABBBA, AABA, AABB
+BABA                 4               37                   1               36              9               5               4               34                        ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+BBBA                 4               7                    1               6               4               1               3               6                         ABABA, ABBBA, BBABA, BB  
+AABBA                5               4                    1               3               4               1               3               6                         ABABA, ABBBA, BBABA, BB  
+ABABA                5               6                    2               4               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABBBA                5               5                    1               4               7               1               6               7                         ABABA, BABA, BB, BBABA, ABBBA, AABA, AABB
+BBABA                5               10                   2               8               9               5               4               6                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+AABABA               6               5                    2               3               8               5               3               7                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBBA               6               4                    1               3               4               1               3               8                         ABABA, ABBBA, BBABA, BB  
+ABBABA               6               6                    2               4               11              5               6               7                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BABABA               6               27                   1               26              9               5               4               28                        ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+BBBABA               6               7                    2               5               8               5               3               7                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBABA              7               4                    2               2               8               5               3               4                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+ABABABA              7               6                    3               3               11              5               6               3                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABBBABA              7               5                    2               3               11              5               6               4                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BBABABA              7               10                   3               7               9               5               4               3                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+AABABABA             8               5                    3               2               8               5               3               4                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBBABA             8               4                    2               2               8               5               3               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+ABBABABA             8               6                    3               3               11              5               6               4                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BABABABA             8               20                   3               17              9               5               4               2                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+BBBABABA             8               7                    3               4               8               5               3               4                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBABABA            9               3                    2               1               8               5               3               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+ABABABABA            9               4                    2               2               11              5               6               4                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABBBABABA            9               4                    2               2               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BBABABABA            9               8                    2               6               9               5               4               4                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+AABABABABA           10              3                    2               1               8               5               3               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBBABABA           10              3                    2               1               8               5               3               6                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+ABBABABABA           10              4                    2               2               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BABABABABA           10              8                    1               7               9               5               4               2                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+BBBABABABA           10              5                    2               3               8               5               3               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+AABBABABABA          11              1                    1               0               5               5               0               6                         ABBABA, BB, BBABABA, ABB, AABBBABA
+ABABABABABA          11              2                    1               1               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABBBABABABA          11              2                    1               1               11              5               6               6                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BBABABABABA          11              3                    1               2               9               5               4               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+AABABABABABA         12              1                    1               0               5               5               0               6                         ABBABA, BB, BBABABA, ABB, AABBBABA
+AABBBABABABA         12              1                    1               0               5               5               0               7                         ABBABA, BB, BBABABA, ABB, AABBBABA
+ABBABABABABA         12              1                    1               0               5               5               0               6                         ABBABA, BB, BBABABA, ABB, AABBBABA
+BABABABABABA         12              1                    1               0               5               5               0               3                         ABBABA, BB, BBABABA, ABB, AABBBABA
+BBBABABABABA         12              1                    1               0               5               5               0               6                         ABBABA, BB, BBABABA, ABB, AABBBABA
+
+
+CATALYZERS AS SPECIES
+Name                 Length (chars)  Total Gen Reactions  Cond Reactions  Cll Reactions   Total Catalyzers Cond Catalyzers Cll Catalyzers  Reactions as Reactants    Unique Catalyzers        
+BB                   2               7                    0               7               5               0               5               4                         ABABA, BB, BBABA, ABBBA, AABB
+AABB                 4               4                    0               4               4               0               4               6                         ABABA, ABBBA, BBABA, AABB
+AABA                 4               5                    1               4               8               5               3               6                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
+ABB                  3               5                    0               5               6               0               6               6                         ABABA, BABA, BBABA, ABBBA, AABA, AABB
+BABA                 4               37                   1               36              9               5               4               34                        ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+ABABA                5               6                    2               4               11              5               6               5                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+ABBABA               6               6                    2               4               11              5               6               7                         ABABA, BABA, ABBABA, BB, BBABA, ABBBA, AABA, BBABABA, ABB, AABB, AABBBABA
+BBABA                5               10                   2               8               9               5               4               6                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+ABBBA                5               5                    1               4               7               1               6               7                         ABABA, BABA, BB, BBABA, ABBBA, AABA, AABB
+BBABABA              7               10                   3               7               9               5               4               3                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABB, AABBBABA
+AABBBABA             8               4                    2               2               8               5               3               5                         ABABA, ABBABA, BB, BBABA, ABBBA, BBABABA, ABB, AABBBABA
