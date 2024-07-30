@@ -197,7 +197,7 @@ class GeneratorIO(BaseIO):
         ws.append(["CATALYZERS INFO"])
         ws.append(["Name", "Length (chars)", "Total Reactions", "Cond Reactions", "Cll Reactions",
                 "Total Generated Reactions", "Generated Cond Reactions", "Generated Cll Reactions",
-                "Catalyzers in Reactions"])
+                "Catalyzers as reagent"])
 
         for catalyzer in data["catalyzers"]:
             name = catalyzer.species
@@ -353,8 +353,8 @@ class GeneratorIO(BaseIO):
         with open(self.debug_file, 'w') as file:
             file.write("CATALYZERS\n")
             file.write(f"{'Name':<20} {'Length (chars)':<15} {'Reaction Class (total)':<15} {'Cond Reactions':<15} {'Cll Reactions':<15} "
-                    f"{'Total Gen Reactions':<20} {'Gen Cond Reactions':<20} {'Gen Cll Reactions':<20} "
-                    f"{'Catalyzers in Reactions':<25}\n")
+                    f"{'Generated in reactions':<20} {'Gen Cond Reactions':<20} {'Gen Cll Reactions':<20} "
+                    f"{'Catalyzers as reagent':<25}\n")
             
             for catalyzer in data["catalyzers"]:
                 name = catalyzer.species
@@ -377,7 +377,7 @@ class GeneratorIO(BaseIO):
                         f"{counter_cata_reactant:<25}\n")
             
             file.write("\n\nSPECIES\n")
-            file.write(f"{'Name':<20} {'Length (chars)':<15} {'Total Gen Reactions':<20} {'Cond Reactions':<15} {'Cll Reactions':<15} "
+            file.write(f"{'Name':<20} {'Length (chars)':<15} {'Generated in reactions':<20} {'Cond Reactions':<15} {'Cll Reactions':<15} "
                     f"{'Total Catalyzers':<15} {'Cond Catalyzers':<15} {'Cll Catalyzers':<15} "
                     f"{'Reactions as Reactants':<25} {'Unique Catalyzers':<25}\n")
             
@@ -399,7 +399,7 @@ class GeneratorIO(BaseIO):
                         f"{reactions_as_reactant:<25} {unique_catalyzers_str:<25}\n")
             
             file.write("\n\nCATALYZERS AS SPECIES\n")
-            file.write(f"{'Name':<20} {'Length (chars)':<15} {'Total Gen Reactions':<20} {'Cond Reactions':<15} {'Cll Reactions':<15} "
+            file.write(f"{'Name':<20} {'Length (chars)':<15} {'Generated in reactions':<20} {'Cond Reactions':<15} {'Cll Reactions':<15} "
                     f"{'Total Catalyzers':<15} {'Cond Catalyzers':<15} {'Cll Catalyzers':<15} "
                     f"{'Reactions as Reactants':<25} {'Unique Catalyzers':<25}\n")
             
