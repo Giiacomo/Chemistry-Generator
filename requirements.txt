@@ -1,0 +1,4 @@
+colorlog==6.8.2
+et-xmlfile==1.1.0
+openpyxl==3.1.5
+termcolor==2.4.0

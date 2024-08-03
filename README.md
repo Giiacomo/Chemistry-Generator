@@ -3,6 +3,14 @@
 ## Overview ℹ️
 This tool allows for the generation of chemical species and reactions based on user input. The tool has two main modes: `generator` and `gentool`, which can be selected using the appropriate flags.
 
+## Installation
+
+- Clone this repository
+- Run this command 
+```
+pip install -r requirements.txt
+```
+
 ## Usage 🚀
 
 ### Command Line Arguments 📋
@@ -25,7 +33,7 @@ python main.py input.txt -generator -o output.txt -debug
 
 ### Command Usage Syntax
 ```bash
-python3 main.py [-h] (-generator | -gentool) [-o OUTPUT] [-debug] [-ot {txt,txt-verbose,excel}] file_path
+python3 main.py [-h] (-generator | -gentool) [-o OUTPUT] [-debug] [-ot {txt,txt-verbose,excel}] [-s <int>] file_path
 ```
 Run Generator or AutoTool based on the provided flag.
 
@@ -39,6 +47,7 @@ Run Generator or AutoTool based on the provided flag.
 - `-o OUTPUT, --output OUTPUT`: The name of the output file.
 - `-debug`: Enable debug mode.
 - `-ot {txt,txt-verbose,excel}, --output-type {txt,txt-verbose,excel}`: Specify the output type. Choices are 'txt', 'txt-verbose', or 'excel'.
+- `-s, --seed`: Use a specific seed for randomness.
 
 ### Configuration ⚙️
 

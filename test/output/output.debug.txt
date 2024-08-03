@@ -1,66 +1,66 @@
 CATALYZERS
 Name                 Length (chars)  Reaction Class (total)    Cond Reactions  Cll Reactions   Generated in reactions Gen Cond Reactions   Gen Cll Reactions    Catalyzers as reagent    
-AB                   2               3                         2               1               350                    179                  171                  13                       
-AABB                 4               2                         0               2               115                    0                    115                  21                       
+AABB                 4               2                         2               0               179                    179                  0                    21                       
+AA                   2               3                         0               3               286                    0                    286                  13                       
 
 
 SPECIES
 Name                 Length (chars)  Generated in reactions Cond Reactions  Cll Reactions   Total Catalyzers  Cond Catalyzers Cll Catalyzers  Reactions as Reactants    Unique Catalyzers        
 Cont                 4               0                      0               0               0                 0               0               0                         None                     
-A                    1               32                     0               32              2                 0               2               9                         AABB, AB                 
-B                    1               15                     0               15              2                 0               2               9                         AB, AABB                 
-AA                   2               15                     0               15              1                 0               1               13                        AB                       
-AB                   2               11                     0               11              1                 0               1               13                        AABB                     
-BA                   2               46                     0               46              2                 0               2               73                        AABB, AB                 
-BB                   2               7                      0               7               2                 0               2               13                        AB, AABB                 
-AAB                  3               9                      0               9               1                 0               1               14                        AABB                     
-ABA                  3               6                      1               5               2                 1               1               11                        AB, AABB                 
-ABB                  3               5                      0               5               1                 0               1               14                        AABB                     
-BBA                  3               10                     1               9               2                 1               1               11                        AB, AABB                 
-AABA                 4               5                      1               4               1                 1               0               14                        AB                       
-AABB                 4               4                      0               4               1                 0               1               21                        AABB                     
-ABBA                 4               6                      1               5               2                 1               1               14                        AB, AABB                 
-BABA                 4               37                     1               36              2                 1               1               69                        AB, AABB                 
-BBBA                 4               7                      1               6               1                 1               0               14                        AB                       
-AABBA                5               4                      1               3               1                 1               0               12                        AB                       
-ABABA                5               6                      2               4               2                 1               1               10                        AB, AABB                 
-ABBBA                5               5                      1               4               2                 1               1               12                        AABB, AB                 
-BBABA                5               10                     2               8               2                 1               1               10                        AB, AABB                 
-AABABA               6               5                      2               3               1                 1               0               12                        AB                       
-AABBBA               6               4                      1               3               1                 1               0               20                        AB                       
-ABBABA               6               6                      2               4               2                 1               1               12                        AB, AABB                 
-BABABA               6               27                     1               26              2                 1               1               54                        AB, AABB                 
-BBBABA               6               7                      2               5               1                 1               0               12                        AB                       
-AABBABA              7               4                      2               2               1                 1               0               8                         AB                       
-ABABABA              7               6                      3               3               2                 1               1               6                         AB, AABB                 
-ABBBABA              7               5                      2               3               2                 1               1               8                         AB, AABB                 
-BBABABA              7               10                     3               7               2                 1               1               6                         AB, AABB                 
-AABABABA             8               5                      3               2               1                 1               0               8                         AB                       
-AABBBABA             8               4                      2               2               1                 1               0               10                        AB                       
-ABBABABA             8               6                      3               3               2                 1               1               8                         AB, AABB                 
-BABABABA             8               20                     3               17              2                 1               1               6                         AB, AABB                 
-BBBABABA             8               7                      3               4               1                 1               0               8                         AB                       
-AABBABABA            9               3                      2               1               1                 1               0               5                         AB                       
-ABABABABA            9               4                      2               2               2                 1               1               4                         AB, AABB                 
-ABBBABABA            9               4                      2               2               2                 1               1               5                         AABB, AB                 
-BBABABABA            9               8                      2               6               2                 1               1               4                         AB, AABB                 
-AABABABABA           10              3                      2               1               1                 1               0               5                         AB                       
-AABBBABABA           10              3                      2               1               1                 1               0               12                        AB                       
-ABBABABABA           10              4                      2               2               2                 1               1               5                         AB, AABB                 
-BABABABABA           10              9                      2               7               2                 1               1               4                         AB, AABB                 
-BBBABABABA           10              5                      2               3               1                 1               0               5                         AB                       
-AABBABABABA          11              1                      1               0               1                 1               0               6                         AB                       
-ABABABABABA          11              2                      1               1               2                 1               1               5                         AB, AABB                 
-ABBBABABABA          11              2                      1               1               2                 1               1               6                         AB, AABB                 
-BBABABABABA          11              3                      1               2               2                 1               1               5                         AB, AABB                 
-AABABABABABA         12              1                      1               0               1                 1               0               6                         AB                       
-AABBBABABABA         12              1                      1               0               1                 1               0               7                         AB                       
-ABBABABABABA         12              1                      1               0               1                 1               0               6                         AB                       
-BABABABABABA         12              1                      1               0               1                 1               0               5                         AB                       
-BBBABABABABA         12              1                      1               0               1                 1               0               6                         AB                       
+A                    1               32                     0               32              1                 0               1               9                         AA                       
+B                    1               15                     0               15              1                 0               1               9                         AA                       
+AA                   2               15                     0               15              1                 0               1               13                        AA                       
+AB                   2               11                     0               11              1                 0               1               13                        AA                       
+BA                   2               46                     0               46              1                 0               1               73                        AA                       
+BB                   2               7                      0               7               1                 0               1               13                        AA                       
+AAB                  3               9                      0               9               1                 0               1               14                        AA                       
+ABA                  3               6                      1               5               2                 1               1               11                        AA, AABB                 
+ABB                  3               5                      0               5               1                 0               1               14                        AA                       
+BBA                  3               10                     1               9               2                 1               1               11                        AA, AABB                 
+AABA                 4               5                      1               4               2                 1               1               14                        AA, AABB                 
+AABB                 4               4                      0               4               1                 0               1               21                        AA                       
+ABBA                 4               6                      1               5               2                 1               1               14                        AA, AABB                 
+BABA                 4               37                     1               36              2                 1               1               69                        AA, AABB                 
+BBBA                 4               7                      1               6               2                 1               1               14                        AA, AABB                 
+AABBA                5               4                      1               3               2                 1               1               12                        AA, AABB                 
+ABABA                5               6                      2               4               2                 1               1               10                        AA, AABB                 
+ABBBA                5               5                      1               4               2                 1               1               12                        AA, AABB                 
+BBABA                5               10                     2               8               2                 1               1               10                        AA, AABB                 
+AABABA               6               5                      2               3               2                 1               1               12                        AA, AABB                 
+AABBBA               6               4                      1               3               2                 1               1               20                        AA, AABB                 
+ABBABA               6               6                      2               4               2                 1               1               12                        AA, AABB                 
+BABABA               6               27                     1               26              2                 1               1               54                        AA, AABB                 
+BBBABA               6               7                      2               5               2                 1               1               12                        AA, AABB                 
+AABBABA              7               4                      2               2               2                 1               1               8                         AA, AABB                 
+ABABABA              7               6                      3               3               2                 1               1               6                         AA, AABB                 
+ABBBABA              7               5                      2               3               2                 1               1               8                         AA, AABB                 
+BBABABA              7               10                     3               7               2                 1               1               6                         AA, AABB                 
+AABABABA             8               5                      3               2               2                 1               1               8                         AA, AABB                 
+AABBBABA             8               4                      2               2               2                 1               1               10                        AA, AABB                 
+ABBABABA             8               6                      3               3               2                 1               1               8                         AA, AABB                 
+BABABABA             8               20                     3               17              2                 1               1               6                         AA, AABB                 
+BBBABABA             8               7                      3               4               2                 1               1               8                         AA, AABB                 
+AABBABABA            9               3                      2               1               2                 1               1               5                         AA, AABB                 
+ABABABABA            9               4                      2               2               2                 1               1               4                         AA, AABB                 
+ABBBABABA            9               4                      2               2               2                 1               1               5                         AA, AABB                 
+BBABABABA            9               8                      2               6               2                 1               1               4                         AA, AABB                 
+AABABABABA           10              3                      2               1               2                 1               1               5                         AA, AABB                 
+AABBBABABA           10              3                      2               1               2                 1               1               12                        AA, AABB                 
+ABBABABABA           10              4                      2               2               2                 1               1               5                         AA, AABB                 
+BABABABABA           10              9                      2               7               2                 1               1               4                         AA, AABB                 
+BBBABABABA           10              5                      2               3               2                 1               1               5                         AA, AABB                 
+AABBABABABA          11              1                      1               0               1                 1               0               6                         AABB                     
+ABABABABABA          11              2                      1               1               2                 1               1               5                         AA, AABB                 
+ABBBABABABA          11              2                      1               1               2                 1               1               6                         AA, AABB                 
+BBABABABABA          11              3                      1               2               2                 1               1               5                         AA, AABB                 
+AABABABABABA         12              1                      1               0               1                 1               0               6                         AABB                     
+AABBBABABABA         12              1                      1               0               1                 1               0               7                         AABB                     
+ABBABABABABA         12              1                      1               0               1                 1               0               6                         AABB                     
+BABABABABABA         12              1                      1               0               1                 1               0               5                         AABB                     
+BBBABABABABA         12              1                      1               0               1                 1               0               6                         AABB                     
 
 
 CATALYZERS AS SPECIES
 Name                 Length (chars)  Generated in reactions Cond Reactions  Cll Reactions   Total Catalyzers  Cond Catalyzers Cll Catalyzers  Reactions as Reactants    Unique Catalyzers        
-AB                   2               11                     0               11              1                 0               1               13                        AABB                     
-AABB                 4               4                      0               4               1                 0               1               21                        AABB                     
+AABB                 4               4                      0               4               1                 0               1               21                        AA                       
+AA                   2               15                     0               15              1                 0               1               13                        AA                       

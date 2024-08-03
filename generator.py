@@ -8,7 +8,7 @@ import traceback
 from utils.decorators import timing_decorator, species_involved_decorator
 
 class ReactionGenerator:
-    def __init__(self, system, species, reaction_classes, catalyzer_params, len_classes):
+    def __init__(self, system, species, reaction_classes, catalyzer_params, len_classes, seed=None):
         self.species = species
         self.reaction_classes = reaction_classes
         self.catalyzer_params = catalyzer_params
@@ -19,6 +19,8 @@ class ReactionGenerator:
         self.system = system
         self.len_classes = len_classes
         self.both_on = catalyzer_params[3] == 'ON'
+        self.seed = seed if seed is not None else random.randint(0, 2**32 - 1)  # Generate a random seed if not provided
+        random.seed(self.seed)
 
     def assign_catalyzers(self, eligible_species, reactions, limit=-1):
         species_pool = eligible_species[:]
@@ -295,10 +297,12 @@ class ReactionGenerator:
             "cond_reactions": self.cond_reactions,
             "cll_reactions": self.cll_reactions,
             "species": self.species,
-            "reaction_classes": self.reaction_classes["conds"] + self.reaction_classes["clls"] 
+            "reaction_classes": self.reaction_classes["conds"] + self.reaction_classes["clls"],
+            "seed": self.seed
         }
 
         return generated_data
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate species and reactions.")
@@ -306,14 +310,14 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output", help="The name of the output file.")
     parser.add_argument("-debug", action="store_true", help="Enable debug mode.", default=False)
     parser.add_argument("-ot", "--output-type", choices=["txt", "txt-verbose", "excel"], default="txt", help="Specify the output type. Choices are 'txt', 'txt-verbose', or 'excel'.")
-
+    parser.add_argument("-s", "--seed", type=int, help="Seed for random generation.")
     args = parser.parse_args()
-
     debug = args.debug
     output_type = args.output_type
     file_path = args.file_path
     output_file = args.output
-
+    seed = args.seed
+    
     generatorIO = GeneratorIO(input_file=file_path, output_file=output_file, debug=debug, debug_output_type=output_type)
     try:
         parsed_data = generatorIO.parse_data()
@@ -330,7 +334,9 @@ if __name__ == "__main__":
                                       species=species,
                                       reaction_classes=reaction_classes,
                                       catalyzer_params=catalyzer_params,
-                                      len_classes=len_dict)
+                                      len_classes=len_dict,
+                                      seed=seed
+                                      )
 
         generated_data = generator.run_generation()
         

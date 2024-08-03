@@ -14,6 +14,7 @@ def main():
     parser.add_argument("-o", "--output", help="The name of the output file.")
     parser.add_argument("-debug", action="store_true", help="Enable debug mode.", default=False)
     parser.add_argument("-ot", "--output-type", choices=["txt", "txt-verbose", "excel"], help="Specify the output type. Choices are 'txt', 'txt-verbose', or 'excel'.")
+    parser.add_argument("-s", "--seed", type=int, help="Seed for random generation.")
 
     args = parser.parse_args()
 
@@ -24,12 +25,14 @@ def main():
     output_file = args.output
     debug = args.debug
     output_type = args.output_type
+    seed = args.seed
 
     Logger.set_debug_mode(debug)
     Logger.get_logger()
     if args.generator:
         command = ["python3", "generator.py", file_path]
-
+        if seed:
+            command += ["-s", str(seed)]
         if output_file:
             command += ["-o", output_file]
         if debug:

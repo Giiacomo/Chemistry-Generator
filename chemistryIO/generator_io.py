@@ -61,6 +61,8 @@ class GeneratorIO(BaseIO):
                     self.write_debug_info_excel(data)
                 else:
                     self.write_debug_info(data)
+            
+            Logger.info(f'Seed {data["seed"]} has been used for the generation.')
 
     def write_debug_info_excel(self, data):
         wb = Workbook()
