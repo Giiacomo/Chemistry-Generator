@@ -2,7 +2,9 @@ import sys
 import time
 import subprocess
 import argparse
-
+from utils.decorators import timing_decorator
+from utils.logger import Logger
+@timing_decorator
 def main():
     parser = argparse.ArgumentParser(description="Run Generator or AutoTool based on the provided flag.")
     parser.add_argument("file_path", help="The path to the input file.")
@@ -23,9 +25,11 @@ def main():
     debug = args.debug
     output_type = args.output_type
 
+    Logger.set_debug_mode(debug)
+    Logger.get_logger()
     if args.generator:
-        print("\nRunning generation process!")
         command = ["python3", "generator.py", file_path]
+
         if output_file:
             command += ["-o", output_file]
         if debug:
@@ -38,6 +42,8 @@ def main():
             parser.error("-ot/--output-type cannot be used without -debug.")
     
     elif args.gentool:
+        Logger.error("Currently under maintenance!")
+        sys.exit(1)
         print("\nRunning tool process!")
         command = ["python3", "gen_tool.py", file_path]
         if output_file:
@@ -52,11 +58,10 @@ def main():
             parser.error("-ot/--output-type cannot be used without -debug.")
     
     try:
-        start_time = time.time()
+        Logger.info("Running generation process...")
         subprocess.run(command, check=True)
-        end_time = time.time()
-        elapsed_time = round(end_time - start_time, 2)
-        print(f"The process took {elapsed_time} seconds!\n")
+        Logger.info("Generation process completed!")
+
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while running the script: {e}")
         sys.exit(1)

@@ -1,5 +1,5 @@
 import sys
-from generator_io import GenToolIO
+from io.generator_io import GenToolIO
 
 def generate_condensation_reactions(data):
 
