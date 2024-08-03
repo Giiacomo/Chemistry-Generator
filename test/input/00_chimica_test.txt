@@ -1,9 +1,9 @@
 SYSTEM
 #POSSIBLE PARAMS ARE 
-#   -ML: maximum species length in order to partake in generate_new_species condensation reactions.
+#   -ML: <INT> maximum species length in order to partake in generate_new_species condensation reactions.
 #   -CLL_ML_ACTIVE: <BOOL> whether ML filter should be applied to cleavage reactions too or not.
-#   -D_CONCENTRATION: default species concentration
-#   -D_CONTRIB: default specie contribution to the membrane
+#   -D_CONCENTRATION: <FLOAT> default species concentration
+#   -D_CONTRIB: <FLOAT> default specie contribution to the membrane
 ML                  6
 CLL_ML_ACTIVE       OFF
 D_CONCENTRATION     1.00E-15
@@ -11,18 +11,21 @@ D_CONTRIB           0.01
 
 SPECIES
 #FORMA 
-#PRIMA RIGA = <CONTENITORE>
-#PRIMA COLONNA = <NOME SPECIE>
-#SECONDA COLONNA = <CONCENTRAZIONE SPECIE IN PROTOCELLA>
-#TERZA COLONNA = <CONTRIBUTO AL CONTENITORE> 
-Cont	1.35E-16	0				
-A	    1.00E-15	0.
-B	    1.00E-15	0.
-AA	    1.00E-15	0.
-AB	    1.00E-15	0.
-BA	    1.00E-15	0.
-BB	    1.00E-15	0.
-AABB    1.00E-15	0.
+#PRIMA RIGA = <STRING> contenitore
+#PRIMA COLONNA = <STRING> nome specie
+#SECONDA COLONNA = <FLOAT> concentrazione specie nella protocellula
+#TERZA COLONNA = <FLOAT> contributo al contenitore
+#QUARTA COLONNA = <BOOL> la specie può attraversare la membrana
+#QUINTA COLONNA (OPZIONALE) = <FLOAT> concentrazione esterna 
+#SESTA COLONNA (OPZIONALE) = <FLOAT> costante di diffusione attraverso membrana
+Cont	1.35E-16	0   F				
+A	    1.00E-15	0.  T  10  1.00E-18
+B	    1.00E-15	0.  T  
+AA	    1.00E-15	0.  T
+AB	    1.00E-15	0.  T
+BA	    1.00E-15	0.  T
+BB	    1.00E-15	0.  T
+AABB    1.00E-15	0.  F
 
 LEN_CLASSES
 #FORMA

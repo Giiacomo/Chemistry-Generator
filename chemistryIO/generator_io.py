@@ -29,8 +29,10 @@ class GeneratorIO(BaseIO):
         with open(self.output_file, 'w') as file:
             max_name_length = max(len(str(species.name)) for species in data["species"])
             max_concentration_length = max(len(str(species.concentration)) for species in data["species"])
-
+            membrane_cross_species = []
             for species in data["species"]:
+                if species.can_cross_membrane:
+                    membrane_cross_species.append(species)
                 name_str = str(species.name).ljust(max_name_length + 2) 
                 concentration_str = str(species.concentration).ljust(max_concentration_length + 2) 
                 contrib_str = str(species.contrib) 
@@ -38,6 +40,13 @@ class GeneratorIO(BaseIO):
                 file.write(f"{name_str} {concentration_str} {contrib_str}\n")
 
             file.write("\n") 
+
+            for species in membrane_cross_species:
+                    external_concentration = species.external_concentration or config_handler.external_concentration
+                    diffusion_constant = species.diffusion_constant or config_handler.diffusion_constant
+                    file.write(f"{external_concentration} > {species.name} ; {diffusion_constant:.2E}\n")
+
+            
 
             self.counter_cond = 0
             for r in data["cond_reactions"]:  

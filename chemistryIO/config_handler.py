@@ -1,7 +1,6 @@
 import configparser
 from utils.constants import CONFIG_FILE
 
-
 class ConfigHandler:
     _instance = None
 
@@ -24,10 +23,18 @@ class ConfigHandler:
                 return False
         return value
 
+    def _convert_to_number(self, value):
+        try:
+            return float(value)
+        except ValueError:
+            return value
+
     def _get_property(self, section, key):
         value = self.config.get(section, key, fallback=None)
         if section == 'DEBUG':
             return self._convert_to_boolean(value)
+        if section == 'CHEMISTRY':
+            return self._convert_to_number(value)
         return value
 
     def __getattr__(self, name):
@@ -36,6 +43,9 @@ class ConfigHandler:
     
         if name in self.config['DEBUG']:
             return self._get_property('DEBUG', name)
+        
+        if name in self.config['CHEMISTRY']:
+            return self._get_property('CHEMISTRY', name)
         
         raise AttributeError(f"ConfigHandler has no property '{name}'")
 

@@ -1,10 +1,13 @@
 from .reaction_class import CondReactionClass, CllReactionClass
 
 class Species:
-    def __init__(self, name, concentration, contrib, is_in_initial_set=False):
+    def __init__(self, name, concentration, contrib, can_cross_membrane=False, external_concentration=None, diffusion_constant=None, is_in_initial_set=False):
         self.name = name
         self.concentration = concentration
         self.contrib = contrib
+        self.can_cross_membrane = can_cross_membrane
+        self.external_concentration = external_concentration
+        self.diffusion_constant = diffusion_constant
         self.generator_reactions = []
         self.is_in_initial_set = is_in_initial_set
 

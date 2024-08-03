@@ -3,9 +3,11 @@ import random
 import argparse
 from classes import SystemParameters, Species, Catalyzer, GeneratedReaction
 from chemistryIO.generator_io import GeneratorIO
+from chemistryIO.config_handler import config_handler
 from utils.utils import are_reactions_same_no_cata, flatten_species_list, are_reactions_same
 import traceback
 from utils.decorators import timing_decorator, species_involved_decorator
+
 
 class ReactionGenerator:
     def __init__(self, system, species, reaction_classes, catalyzer_params, len_classes, seed=None):
@@ -98,7 +100,7 @@ class ReactionGenerator:
                     if reactant_1.endswith(reaction.generic_reactant_1) and reactant_2.startswith(reaction.generic_reactant_2):
                         product_species = reactant_1 + reactant_2
                         
-                        product = Species(product_species, self.system.D_CONCENTRATION, self.system.D_CONTRIB)
+                        product = Species(product_species, config_handler.default_concentration, config_handler.default_contribution)
 
                         for species_prod in self.species:
                             if species_prod.name == product.name:
@@ -152,7 +154,7 @@ class ReactionGenerator:
                                     break
                            
                             if not found:
-                                product_species1 = Species(cleavage_1, self.system.D_CONCENTRATION, self.system.D_CONTRIB)
+                                product_species1 = Species(cleavage_1, config_handler.default_concentration, config_handler.default_contribution)
 
                             found = False
 
@@ -163,7 +165,7 @@ class ReactionGenerator:
                                     break
 
                             if not found:
-                                product_species2 = Species(cleavage_2, self.system.D_CONCENTRATION, self.system.D_CONTRIB)
+                                product_species2 = Species(cleavage_2, config_handler.default_concentration, config_handler.default_contribution)
 
 
                             new_reaction = GeneratedReaction(
@@ -205,7 +207,7 @@ class ReactionGenerator:
                 is_cll_catalyzer = random.random() <= extracted_specie_class.p_cll
 
                 if not self.both_on and is_cond_catalyzer and is_cll_catalyzer:
-                    if random.random() <= 0.5:
+                    if random.random() <= config_handler.catalyzer_selection_probability:
                         is_cond_catalyzer = False
                     else:
                         is_cll_catalyzer = False
