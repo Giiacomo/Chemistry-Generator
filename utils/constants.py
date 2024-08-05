@@ -13,11 +13,10 @@ LEN_CLASSES_SECTION = 'len_classes'
 SPECIES_INPUT_FORM = ['<speciename>', '<concentration>', '<contribution>', '<can_cross_membrane>', '[external_concentration]', '[diffusion_constant]']
 
 CONFIG_FILE = 'config/config.ini'
-
-
 DEFAULT_OUTPUT_FILE='output'
 
 CONTAINER='Cont'
+CLL_ML_ACTIVE='CLL_ML_ACTIVE'
 
 INFO='INFO'
 WARNING='WARNING'

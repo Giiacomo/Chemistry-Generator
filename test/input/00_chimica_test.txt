@@ -18,7 +18,7 @@ SPECIES
 #SESTA COLONNA (OPZIONALE) = <FLOAT> costante di diffusione attraverso membrana
 Cont	1.35E-16	0   F				
 A	    1.00E-15	0.  T  10  1.00E-18
-B	    1.00E-15	e0.  T  
+B	    1.00E-15	0.  T  
 AA	    1.00E-15	0.  T
 AB	    1.00E-15	0.  T
 BA	    1.00E-15	0.  T
@@ -31,9 +31,9 @@ LEN_CLASSES
 #SECONDA COLONNA = <probabilità della specie di diventare un catalizzatore per condensazione se estratta>
 #TERZA COLONNA = <probabilità della specie di diventare un catalizzatore per cleavage se estratta>
 #QUARTA COLONNA = <specificità (lunghezza della parte di specie esplicitata nelle classi di reazione)
-3,4         0.2         0.2     2
-5               0.05      1     2
-6,7,8           0.1       0.05    3
+3,4             0.2         0.2     2
+5               0.05      1         2
+6,7,8           0.1       0.05      3
 
 
 CATALYZER_PARAMS

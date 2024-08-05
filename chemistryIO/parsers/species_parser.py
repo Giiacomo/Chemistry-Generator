@@ -26,12 +26,12 @@ def parse_species(line):
             try:
                 external_concentration = float(parts[4])
             except ValueError:
-                raise ValueError("External concentration should be a float.")
+                raise ValueError(f"{SPECIES_INPUT_FORM[4]} (5 col) should be a float.")
         
         if len(parts) > 5:
             try:
                 diffusion_constant = float(parts[5])
             except ValueError:
-                raise ValueError("Diffusion constant should be a float.")
-    
+                raise ValueError(f"{SPECIES_INPUT_FORM[5]} (6 col) should be a float.")
+
     return Species(name, concentration, contrib, can_cross_membrane, external_concentration, diffusion_constant)

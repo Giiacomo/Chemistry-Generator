@@ -29,7 +29,6 @@ class BaseIO:
 
             data['system'].validate()
 
-
         except FileNotFoundError:
             Logger.error("Error: File not found.")
             sys.exit(1)

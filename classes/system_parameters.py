@@ -1,3 +1,5 @@
+from utils.constants import CLL_ML_ACTIVE
+
 class SystemParameters:
     def __init__(self):
         self.ML = None
@@ -5,11 +7,11 @@ class SystemParameters:
 
     def set_CLL_ML_ACTIVE(self, value):
         if value == 'ON':
-            setattr(self, 'CLL_ML_ACTIVE', True)
+            setattr(self, CLL_ML_ACTIVE, True)
         elif value == 'OFF':
-            setattr(self, 'CLL_ML_ACTIVE', False)
+            setattr(self, CLL_ML_ACTIVE, False)
         else:
-            raise ValueError("CLL_ML_ACTIVE parameter must be 'ON' or 'OFF'")
+            raise ValueError(f"{CLL_ML_ACTIVE} parameter must be 'ON' or 'OFF'")
 
     def validate(self):
         for attr_name, attr_value in self.__dict__.items():
@@ -20,6 +22,6 @@ class SystemParameters:
             raise ValueError("ML parameter must be an integer")
 
         if self.CLL_ML_ACTIVE not in ['ON', 'OFF']:
-            raise ValueError("CLL_ML_ACTIVE parameter must be 'ON' or 'OFF'")
+            raise ValueError(f"{CLL_ML_ACTIVE} parameter must be 'ON' or 'OFF'")
         
         self.set_CLL_ML_ACTIVE(self.CLL_ML_ACTIVE)
