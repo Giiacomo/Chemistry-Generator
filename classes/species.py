@@ -44,3 +44,5 @@ class Species:
         info['list_unique_catalyzers'] = list(unique_catalyzers)
 
         return info
+
+

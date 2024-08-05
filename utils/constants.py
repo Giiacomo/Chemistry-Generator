@@ -10,8 +10,9 @@ REACTIONS_SECTION = 'reactions'
 SYSTEM_SECTION = 'system'
 LEN_CLASSES_SECTION = 'len_classes'
 
-CONFIG_FILE = 'config/config.ini'
+SPECIES_INPUT_FORM = ['<speciename>', '<concentration>', '<contribution>', '<can_cross_membrane>', '[external_concentration]', '[diffusion_constant]']
 
+CONFIG_FILE = 'config/config.ini'
 
 
 DEFAULT_OUTPUT_FILE='output'

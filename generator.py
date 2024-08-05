@@ -21,7 +21,7 @@ class ReactionGenerator:
         self.system = system
         self.len_classes = len_classes
         self.both_on = catalyzer_params[3] == 'ON'
-        self.seed = seed if seed is not None else random.randint(0, 2**32 - 1)  # Generate a random seed if not provided
+        self.seed = seed if seed is not None else random.getrandbits(32)
         random.seed(self.seed)
 
     def assign_catalyzers(self, eligible_species, reactions, limit=-1):
@@ -244,7 +244,7 @@ class ReactionGenerator:
             new_condensation_products = self.generate_condensation_reactions(new_species_short)
             new_cleavage_products = [] 
 
-            if self.system.CLL_ML_ACTIVE == 'ON':
+            if self.system.CLL_ML_ACTIVE:
                 new_cleavage_products = self.generate_cleavage_reactions(new_species_short)
             else:
                 new_cleavage_products = self.generate_cleavage_reactions(current_species)

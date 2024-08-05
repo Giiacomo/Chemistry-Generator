@@ -6,8 +6,6 @@ SYSTEM
 #   -D_CONTRIB: <FLOAT> default specie contribution to the membrane
 ML                  6
 CLL_ML_ACTIVE       OFF
-D_CONCENTRATION     1.00E-15
-D_CONTRIB           0.01
 
 SPECIES
 #FORMA 
@@ -20,7 +18,7 @@ SPECIES
 #SESTA COLONNA (OPZIONALE) = <FLOAT> costante di diffusione attraverso membrana
 Cont	1.35E-16	0   F				
 A	    1.00E-15	0.  T  10  1.00E-18
-B	    1.00E-15	0.  T  
+B	    1.00E-15	e0.  T  
 AA	    1.00E-15	0.  T
 AB	    1.00E-15	0.  T
 BA	    1.00E-15	0.  T

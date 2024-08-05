@@ -3,14 +3,12 @@ from .parsers import parse_species, parse_catalyzer_param, parse_system_param, p
 from classes import SystemParameters
 from .config_handler import config_handler
 from utils.constants import *
+from utils.logger import Logger
 
 class BaseIO:
     def __init__(self, input_file, output_file=None):
-
-
         self.input_file = f"{config_handler.input_dir}/{input_file}.{config_handler.output_fmt}"
         self.output_file = f"{config_handler.output_dir}/{output_file if output_file is not None else DEFAULT_OUTPUT_FILE}.{config_handler.output_fmt}"
-
 
     def parse_data(self):
         data = {}
@@ -24,17 +22,19 @@ class BaseIO:
                         continue
                     data, current_section, catalyzer_params_counter = self._process_line(line, data, current_section, catalyzer_params_counter)
 
+            required_sections = [SPECIES_SECTION, CATALYZER_PARAMS_SECTION, REACTIONS_SECTION, SYSTEM_SECTION, LEN_CLASSES_SECTION]
+            for section in required_sections:
+                if section not in data:
+                    raise Exception(f"Error: Missing section '{section}' in input file.")
+
             data['system'].validate()
 
+
         except FileNotFoundError:
-            print(self.input_file)
-            print("Error: File not found.")
-            sys.exit(1)
-        except ValueError as e:
-            print(e)
+            Logger.error("Error: File not found.")
             sys.exit(1)
         except Exception as e:
-            print("Error:", str(e))
+            Logger.error(str(e))
             sys.exit(1)
         return data
 

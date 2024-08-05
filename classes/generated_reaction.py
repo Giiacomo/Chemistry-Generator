@@ -19,3 +19,4 @@ class GeneratedReaction:
 
     def is_species_in_reaction(self, species):
         return (species in self.reactants)
+    
