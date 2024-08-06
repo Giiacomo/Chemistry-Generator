@@ -4,6 +4,7 @@ import argparse
 from classes import SystemParameters, Species, Catalyzer, GeneratedReaction
 from chemistryIO.generator_io import GeneratorIO
 from chemistryIO.config_handler import config_handler
+from utils.logger import Logger
 from utils.utils import are_reactions_same_no_cata, flatten_species_list, are_reactions_same
 import traceback
 from utils.decorators import timing_decorator, species_involved_decorator
@@ -201,18 +202,21 @@ class ReactionGenerator:
         for i in range(len(new_species)):
             extracted_specie = random.choice(new_species)
             len_extracted_specie = str(len(extracted_specie))
-            if len_extracted_specie in self.len_classes:    
+            Logger.warning(extracted_specie)
+            Logger.critical(self.len_classes)
+            if len_extracted_specie in self.len_classes:   
+                Logger.critical("Te") 
                 extracted_specie_class = self.len_classes[len_extracted_specie]
-                is_cond_catalyzer = random.random() <= extracted_specie_class.p_cond
-                is_cll_catalyzer = random.random() <= extracted_specie_class.p_cll
-
+                is_cond_catalyzer = random.random() <= float(extracted_specie_class.p_cond)
+                is_cll_catalyzer = random.random() <= float(extracted_specie_class.p_cll)
+                Logger.warning(is_cond_catalyzer)
                 if not self.both_on and is_cond_catalyzer and is_cll_catalyzer:
-                    if random.random() <= config_handler.catalyzer_selection_probability:
+                    if random.random() <= 0.5:
                         is_cond_catalyzer = False
                     else:
                         is_cll_catalyzer = False
                 #filter based on specificity
-                specificity = extracted_specie_class.specificity
+                specificity = float(extracted_specie_class.specificity)
                 filtered_cond_reactions = [
                     reaction for reaction in cond_reactions
                     if len(reaction.generic_reactant_1) + len(reaction.generic_reactant_2) >= specificity
@@ -326,7 +330,10 @@ if __name__ == "__main__":
         system = parsed_data.get("system", SystemParameters())
         species = parsed_data.get("species", [])
         len_classes = parsed_data.get("len_classes", [])
-        len_dict = {str(length_class.len): length_class for length_class in len_classes}
+        len_dict = {}
+        for length_class in len_classes:
+            for length in length_class.len:
+                len_dict[str(length)] = length_class
 
         catalyzer_params = parsed_data.get("catalyzer_params", [])
         reaction_classes = parsed_data.get("reactions", {})

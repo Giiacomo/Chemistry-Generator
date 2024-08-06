@@ -28,7 +28,6 @@ class BaseIO:
                     raise Exception(f"Error: Missing section '{section}' in input file.")
 
             data['system'].validate()
-
         except FileNotFoundError:
             Logger.error("Error: File not found.")
             sys.exit(1)
@@ -69,5 +68,6 @@ class BaseIO:
             parse_system_param(line, data['system'])
         elif current_section == LEN_CLASSES_SECTION:
             new_params = parse_len_classes(line)
+            print(new_params)
             data[current_section].extend(new_params)
         return data, catalyzer_params_counter
