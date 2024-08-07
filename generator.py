@@ -203,14 +203,10 @@ class ReactionGenerator:
         for i in range(len(new_species)):
             extracted_specie = random.choice(new_species)
             len_extracted_specie = str(len(extracted_specie))
-            Logger.warning(extracted_specie)
-            Logger.critical(self.len_classes)
             if len_extracted_specie in self.len_classes:   
-                Logger.critical("Te") 
                 extracted_specie_class = self.len_classes[len_extracted_specie]
                 is_cond_catalyzer = random.random() <= float(extracted_specie_class.p_cond)
                 is_cll_catalyzer = random.random() <= float(extracted_specie_class.p_cll)
-                Logger.warning(is_cond_catalyzer)
                 if not self.both_on and is_cond_catalyzer and is_cll_catalyzer:
                     if random.random() <= 0.5:
                         is_cond_catalyzer = False
