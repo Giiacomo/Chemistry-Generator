@@ -75,15 +75,16 @@ class ReactionGenerator:
 
         
         self.assign_catalyzers(eligible_cond_species, cond_reactions)
-
         if self.both_on:
             eligible_cll_species = random.choices(eligible_species, k=num_cll_catalyzers)
         else:
             eligible_species = [species for species in eligible_species if species not in [catalyzer.species for catalyzer in self.catalyzers]]
-            eligible_cll_species = random.choices(eligible_cll_species, k=num_cll_catalyzers)
+            eligible_cll_species = random.choices(eligible_species, k=num_cll_catalyzers)
             if len(eligible_cll_species) < num_cll_catalyzers :
                 raise ValueError("Error! Not enough eligible species to satisfy the cll catalyzer requirements.")
+
         self.assign_catalyzers(eligible_cll_species, cll_reactions)
+
 
     @species_involved_decorator
     @timing_decorator
