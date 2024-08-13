@@ -1,4 +1,5 @@
 import sys
+import os
 from .parsers import parse_species, parse_catalyzer_param, parse_system_param, parse_reactions, parse_len_classes
 from classes import SystemParameters
 from .config_handler import config_handler
@@ -7,8 +8,15 @@ from utils.logger import Logger
 
 class BaseIO:
     def __init__(self, input_file, output_file=None):
-        self.input_file = f"{config_handler.input_dir}/{input_file}.{config_handler.output_fmt}"
-        self.output_file = f"{config_handler.output_dir}/{output_file if output_file is not None else DEFAULT_OUTPUT_FILE}.{config_handler.output_fmt}"
+        self.input_file = f"{PARENT_FOLDER}/{config_handler.input_dir}/{input_file}.{config_handler.output_fmt}"
+        if output_file is not None:
+            output_dir = os.path.dirname(output_file)
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+            self.output_file = output_file
+        else:
+            self.output_file = f"{PARENT_FOLDER}/{config_handler.output_dir}/{DEFAULT_OUTPUT_FILE}.{config_handler.output_fmt}"
+        
 
     def parse_data(self):
         data = {}
@@ -68,6 +76,5 @@ class BaseIO:
             parse_system_param(line, data['system'])
         elif current_section == LEN_CLASSES_SECTION:
             new_params = parse_len_classes(line)
-            print(new_params)
             data[current_section].extend(new_params)
         return data, catalyzer_params_counter

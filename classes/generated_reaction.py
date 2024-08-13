@@ -4,6 +4,9 @@ class GeneratedReaction:
         self.reaction_class = reaction_class #ReactionClass
         self.product = product #[]
 
+    def get_reaction_class (self):
+        return self.reaction_class
+
     def is_species_consumed(self, species):
         if species.name not in self.reactants:
             return False   

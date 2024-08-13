@@ -4,6 +4,7 @@ import subprocess
 import argparse
 from utils.decorators import timing_decorator
 from utils.logger import Logger
+from utils.constants import PARENT_FOLDER
 @timing_decorator
 def main():
     parser = argparse.ArgumentParser(description="Run Generator or AutoTool based on the provided flag.")
@@ -30,7 +31,7 @@ def main():
     Logger.set_debug_mode(debug)
     Logger.get_logger()
     if args.generator:
-        command = ["python3", "generator.py", file_path]
+        command = ["python3", f"{PARENT_FOLDER}/generator.py", file_path]
         if seed:
             command += ["-s", str(seed)]
         if output_file:

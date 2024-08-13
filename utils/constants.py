@@ -1,3 +1,5 @@
+import os
+
 SPECIES = 'SPECIES'
 CATALYZER_PARAMS = 'CATALYZER_PARAMS'
 REACTIONS = 'REACTIONS'
@@ -11,8 +13,8 @@ SYSTEM_SECTION = 'system'
 LEN_CLASSES_SECTION = 'len_classes'
 
 SPECIES_INPUT_FORM = ['<speciename>', '<concentration>', '<contribution>', '<can_cross_membrane>', '[external_concentration]', '[diffusion_constant]']
-
-CONFIG_FILE = 'config/config.ini'
+PARENT_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_FILE = f'{PARENT_FOLDER}/config/config.ini'
 DEFAULT_OUTPUT_FILE='output'
 
 CONTAINER='Cont'

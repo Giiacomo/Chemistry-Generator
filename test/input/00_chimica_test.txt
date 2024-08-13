@@ -4,7 +4,7 @@ SYSTEM
 #   -CLL_ML_ACTIVE: <BOOL> whether ML filter should be applied to cleavage reactions too or not.
 #   -D_CONCENTRATION: <FLOAT> default species concentration
 #   -D_CONTRIB: <FLOAT> default specie contribution to the membrane
-ML                  6
+ML                  4
 CLL_ML_ACTIVE       OFF
 
 SPECIES
@@ -23,9 +23,6 @@ AA	    1.00E-15	0.  T  10  1.00E-18
 AB	    1.00E-15	0.  T  10  1.00E-18
 BA	    1.00E-15	0.  T  10  1.00E-18
 BB	    1.00E-15	0.  T  10  1.00E-18
-AABB    1.00E-15	0.  F
-ABBB    1.00E-15	0.  F
-BBBB    1.00E-15	0.  F
 
 LEN_CLASSES
 #FORMA
@@ -33,10 +30,7 @@ LEN_CLASSES
 #SECONDA COLONNA = <probabilità della specie di diventare un catalizzatore per condensazione se estratta>
 #TERZA COLONNA = <probabilità della specie di diventare un catalizzatore per cleavage se estratta>
 #QUARTA COLONNA = <specificità (lunghezza della parte di specie esplicitata nelle classi di reazione)
-3,4             0.4       0.4       2
-5               0.2       0.2       2
-6,7,8           0.2       0.2       2
-
+2,6             1.       1.       2
 
 CATALYZER_PARAMS
 #FORMA
@@ -44,10 +38,10 @@ CATALYZER_PARAMS
 #SECONDA RIGA = <numero di specie chimiche catalizzatrici di una classe di condensazioni>
 #TERZA RIGA = <numero di specie chimiche catalizzatrici di una classe di cleavage>
 #QUARTA RIGA = <catalizzatore di condensazione può esserlo anche di cleavage: ON/OFF>
-3,6
+2,6
 2
 1
-OFF
+ON
 
 
 REACTIONS
@@ -55,11 +49,9 @@ REACTIONS
 #REAGENTE_1 = <stringa qualsiasi che termina in AB>
 #REAGENTE_2 = <stringa qualsiasi che inizia con AB> 
 #V_i = <velocità associata alla condensazione>
-R-A     BA-R    0.1
-R-B     BA-R    0.5
+R-A    A-R    0.1
 #FORMA CLLS
 #REAGENTE = <stringa generica, pattern, stringa generica>
 #V_i = <velocità associata alla condensazione>
-R-AA-R  1   0.3
-R-AB-R  1   0.5
-R-BB-R  1   0.5
+R-AB-R  1   0.1
+R-BA-R  1   0.1

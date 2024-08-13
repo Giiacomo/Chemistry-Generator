@@ -5,7 +5,7 @@ from classes import SystemParameters, Species, Catalyzer, GeneratedReaction
 from chemistryIO.generator_io import GeneratorIO
 from chemistryIO.config_handler import config_handler
 from utils.logger import Logger
-from utils.utils import are_reactions_same_no_cata, flatten_species_list, are_reactions_same
+from utils.utils import are_reactions_same_no_cata, flatten_species_list, are_reactions_same, add_species_if_not_exists
 import traceback
 from utils.decorators import timing_decorator, species_involved_decorator
 
@@ -110,12 +110,13 @@ class ReactionGenerator:
                                 break
                         
                         new_reaction = GeneratedReaction(reactants=[reactant_1, reactant_2], reaction_class=reaction, product=[product])
+                        found = False
                         for r in self.cond_reactions:
                             if are_reactions_same_no_cata(r, new_reaction):
-                                new_reaction = r
+                                found = True
                                 break
 
-                        if new_reaction not in condensation_reactions:
+                        if not found and new_reaction not in condensation_reactions:
                             condensation_reactions.append(new_reaction)
                             product.add_generator_reaction(new_reaction)
                             reaction.add_generated_reaction(new_reaction)
@@ -175,20 +176,18 @@ class ReactionGenerator:
                                 reaction_class=reaction,
                                 product=[product_species1, product_species2]
                             )
-
                             found = False
+
                             for r in self.cll_reactions:
-                                if found:
-                                    break
                                 if are_reactions_same_no_cata(r, new_reaction):                                   
-                                    new_reaction = r
                                     found = True
+                                    break
 
-
-                            cleavage_reactions.append(new_reaction)
-                            product_species1.add_generator_reaction(new_reaction)
-                            product_species2.add_generator_reaction(new_reaction)
-                            reaction.add_generated_reaction(new_reaction)
+                            if not found and new_reaction not in cleavage_reactions:
+                                cleavage_reactions.append(new_reaction)
+                                product_species1.add_generator_reaction(new_reaction)
+                                product_species2.add_generator_reaction(new_reaction)
+                                reaction.add_generated_reaction(new_reaction)
                     start_index = specie_name.find(reactant_core, start_index + 1)
 
         return cleavage_reactions
@@ -237,39 +236,49 @@ class ReactionGenerator:
         self.generate_new_catalyzers(new_species)
         self.species.extend(new_species)
         self.species = flatten_species_list(self.species)
+        new_species_list = []
         while True:
-
             current_species = flatten_species_list([species for species in self.species if species.name != self.container.name])
             new_species_short = [species for species in current_species if len(species.name) <= int(self.system.ML)]
-            
             new_condensation_products = self.generate_condensation_reactions(new_species_short)
+            
+            
             new_cleavage_products = [] 
-
             if self.system.CLL_ML_ACTIVE:
+                if len(new_species_list) > 0:
+                    new_species_short = [species for species in new_species_list if len(species.name) <= int(self.system.ML)]
                 new_cleavage_products = self.generate_cleavage_reactions(new_species_short)
             else:
-                new_cleavage_products = self.generate_cleavage_reactions(current_species)
+                if len(new_species_list) > 0:
+                    new_species = new_species_list
+                else:
+                    new_species = current_species
+                new_cleavage_products = self.generate_cleavage_reactions(new_species)
 
-            new_species_set = set([reaction.product[0] for reaction in new_condensation_products])
-            new_species_set.update([reaction.product[0] for reaction in new_cleavage_products])
-            new_species_set.update([reaction.product[1] for reaction in new_cleavage_products])
-
-            new_species_list = list(new_species_set)
+            new_species_list = []
+            for reaction in new_condensation_products:
+                add_species_if_not_exists(reaction.product, new_species_list)
+            for reaction in new_cleavage_products:
+                add_species_if_not_exists(reaction.product, new_species_list)
+                    
             new_species_list = [specie for specie in new_species_list if specie.name not in [species.name for species in current_species]]
-
             self.generate_new_catalyzers(new_species_list)
 
             self.cond_reactions.extend(new_condensation_products)
             self.cll_reactions.extend(new_cleavage_products)
+
             if not new_species_list:
                 break
             self.species.extend(new_species_list)
 
             self.species = flatten_species_list(self.species)
 
-        self.cond_reactions = self.eliminate_duplicate_reactions(self.cond_reactions)
-        self.cll_reactions = self.eliminate_duplicate_reactions(self.cll_reactions)
 
+    def print_reactions(self, reactions):
+        for reaction in reactions:
+            Logger.critical(f"{reaction.reactants} {[r.name for r in reaction.product]}")
+
+    @timing_decorator
     def eliminate_duplicate_reactions(self, reactions):
         unique_reactions = []
         for reaction in reactions:
@@ -286,10 +295,14 @@ class ReactionGenerator:
         
         self.generate_catalyzers()
         self.cond_reactions = self.generate_condensation_reactions(self.species)
+        
+        for r in self.cond_reactions:
+            add_species_if_not_exists(r.product, self.species)
+
         self.cll_reactions = self.generate_cleavage_reactions(self.species)
 
-        self.cond_reactions = self.eliminate_duplicate_reactions(self.cond_reactions)
-        self.cll_reactions = self.eliminate_duplicate_reactions(self.cll_reactions)
+        for r in self.cll_reactions:
+            add_species_if_not_exists(r.product, self.species)
 
         self.generate_new_species()
         self.sort_species()
