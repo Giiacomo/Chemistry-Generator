@@ -48,7 +48,7 @@ class ReactionGenerator:
                 new_catalyzer_list.append(catalyzer)
                 used_species.add(chosen)
                 self.catalyzers.append(catalyzer)
-            if reaction not in catalyzer.reactions:        
+            if reaction not in catalyzer.reactions:
                 catalyzer.add_reaction_class(reaction)
                 reaction.add_catalyzer(catalyzer)
 
@@ -177,8 +177,12 @@ class ReactionGenerator:
                                 product=[product_species1, product_species2]
                             )
                             found = False
-
                             for r in self.cll_reactions:
+                                if are_reactions_same_no_cata(r, new_reaction):                                   
+                                    found = True
+                                    break
+                            
+                            for r in cleavage_reactions:
                                 if are_reactions_same_no_cata(r, new_reaction):                                   
                                     found = True
                                     break

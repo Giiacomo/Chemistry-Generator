@@ -31,8 +31,15 @@ def are_reactions_same_no_cata(reaction1, reaction2):
         key1 = (tuple(sorted(reaction1.reactants)), tuple(product.name for product in reaction1.product))
         key2 = (tuple(sorted(reaction2.reactants)), tuple(product.name for product in reaction2.product))
     elif isinstance(reaction1.reaction_class, CllReactionClass):
-        key1 = (tuple(sorted(reaction1.reactants)), tuple(sorted(product.name for product in reaction1.product)))
-        key2 = (tuple(sorted(reaction2.reactants)), tuple(sorted(product.name for product in reaction2.product)))
+        # Verifica che ci sia un solo reactant e due products per entrambe le reazioni
+        if len(reaction1.reactants) == len(reaction2.reactants) == 1 and len(reaction1.product) == len(reaction2.product) == 2:
+            reactant1, reactant2 = reaction1.reactants[0], reaction2.reactants[0]
+            products1 = sorted(product.name for product in reaction1.product)
+            products2 = sorted(product.name for product in reaction2.product)
+            
+            key1 = (reactant1, tuple(products1))
+            key2 = (reactant2, tuple(products2))
+
     else:
         return False
     return key1 == key2

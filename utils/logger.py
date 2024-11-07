@@ -1,5 +1,6 @@
 import logging
 import colorlog
+import sys
 
 class Logger:
     _instance = None
@@ -40,6 +41,8 @@ class Logger:
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
         self.logger.setLevel(logging.DEBUG if self.debug_mode else logging.INFO)
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+
 
     @staticmethod
     def get_logger():

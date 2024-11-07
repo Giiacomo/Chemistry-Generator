@@ -335,6 +335,9 @@ class GeneratorIO(BaseIO):
 
 
         if config_handler.print_catalyzer_info:
+            Logger.debug(f'Total num of catalyzers: {len(data["catalyzers"])}')
+            
+
             Logger.debug("Condensation catalyzers for this chemical are: " )
             Logger.debug(", ".join(catalyzer.species for catalyzer in data["catalyzers"] if catalyzer.is_cond_catalyzer()))
 
